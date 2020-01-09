@@ -2,74 +2,74 @@
 @import "scss/mixin.scss";
 
 * {
-  box-sizing: border-box;
+	box-sizing: border-box;
 }
 
 // // // // // // // //
 // // // // // // // //
 // Текст
 body {
-  color: $text_color_m;
-  font-family: $font_text;
-  font-weight: normal;
-  margin: 0;
-  min-width: 320px;
+	color: $text_color_m;
+	font-family: $font_text;
+	font-weight: normal;
+	margin: 0;
+	min-width: 320px;
 }
 
 h1,
 .h1_mimicry {
-  @include h1;
-  margin-bottom: 10px;
+	@include h1;
+	margin-bottom: 10px;
 
-  &:first-child {
-    margin-top: -17px;
-  }
+	&:first-child {
+		margin-top: -17px;
+	}
 }
 
 h2 {
-  @include h2;
-  margin-bottom: 10px;
+	@include h2;
+	margin-bottom: 10px;
 
-  &:first-child {
-    margin-top: -6px;
-  }
+	&:first-child {
+		margin-top: -6px;
+	}
 }
 
 p {
-  @include p;
-  margin: 0 0 15px 0;
+	@include p;
+	margin: 0 0 15px 0;
 
-  &:last-of-type {
-    margin-bottom: 0;
-  }
+	&:last-of-type {
+		margin-bottom: 0;
+	}
 }
 
 a {
-  color: $main_color;
+	color: $main_color;
 }
 
 // // // // // // // //
 // // // // // // // //
 // Блюр
 .blur {
-  margin-left: auto;
-  position: relative;
-  overflow: hidden;
-  background-color: $blur_color;
-  z-index: 1;
+	margin-left: auto;
+	position: relative;
+	overflow: hidden;
+	background-color: $blur_color;
+	z-index: 1;
 
-  &::after {
-    content: "";
-    display: block;
-    width: 100vw;
-    height: calc(100% + 200px);
-    position: absolute;
-    top: -100px;
-    filter: blur(60px);
-    background: no-repeat center;
-    background-size: cover;
-    opacity: 0.5;
-  }
+	&::after {
+		content: "";
+		display: block;
+		width: 100vw;
+		height: calc(100% + 200px);
+		position: absolute;
+		top: -100px;
+		filter: blur(60px);
+		background: no-repeat center;
+		background-size: cover;
+		opacity: 0.5;
+	}
 }
 
 // // // // // // // //
@@ -77,369 +77,367 @@ a {
 // Кнопки
 .botton,
 .botton_ghost {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  height: 50px;
-  padding: 0 30px 2px;
-  font-size: 22px;
-  text-align: center;
-  text-decoration: none;
-  transition: 100ms ease-out 0ms;
-  transition-property: box-shadow, background-color;
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	height: 50px;
+	padding: 0 30px 2px;
+	font-size: 22px;
+	text-align: center;
+	text-decoration: none;
+	transition: 100ms ease-out 0ms;
+	transition-property: box-shadow, background-color;
 
-  width: 100%;
-  max-width: 320px;
+	width: 100%;
+	max-width: 320px;
 }
 
 .botton {
-  color: #fff;
-  background-color: #e01b1b;
-  box-shadow: 0px 9px 27px rgba(245, 43, 42, 0.3);
+	color: #fff;
+	background-color: #e01b1b;
+	box-shadow: 0px 9px 27px rgba(245, 43, 42, 0.3);
 
-  &:hover {
-    box-shadow: 0px 9px 37px rgba(245, 43, 42, 0.7);
-  }
+	&:hover {
+		box-shadow: 0px 9px 37px rgba(245, 43, 42, 0.7);
+	}
 }
 
 .botton_ghost {
-  color: $main_color;
-  border: 2px solid $main_color;
+	color: $main_color;
+	border: 2px solid $main_color;
 
-  &:hover {
-    color: #fff;
-    background-color: #e01b1b;
-    border: none;
-  }
+	&:hover {
+		color: #fff;
+		background-color: #e01b1b;
+		border: none;
+	}
 }
 
 .shadow_botton_wrap {
-  width: 100%;
-  margin-bottom: 30px;
-  position: relative;
-  display: inline-block;
+	width: 100%;
+	margin-bottom: 30px;
+	position: relative;
+	display: inline-block;
 
-  &:last-child {
-    margin-bottom: 0;
-  }
+	&:last-child {
+		margin-bottom: 0;
+	}
 
-  .r_line {
-    position: absolute;
-    background-color: $main_color;
-  }
+	.r_line {
+		position: absolute;
+		background-color: $main_color;
+	}
 
-  .vertical_line {
-    width: 2px;
-    height: 0;
-    transition: height 170ms ease-out 0ms;
-  }
+	.vertical_line {
+		width: 2px;
+		height: 0;
+		transition: height 170ms ease-out 0ms;
+	}
 
-  .horizontal_line {
-    height: 2px;
-    width: 0;
-    top: calc((100% / 2) - 1px);
-    transition: width 170ms ease-in 170ms;
-    z-index: 0;
-  }
+	.horizontal_line {
+		height: 2px;
+		width: 0;
+		top: calc((100% / 2) - 1px);
+		transition: width 170ms ease-in 170ms;
+		z-index: 0;
+	}
 }
 
 .shadow_botton {
-  background-color: $fon_color_w;
-  position: relative;
-  padding: 7px 10px;
-  text-align: right;
-  display: inline-flex;
-  justify-content: flex-end;
-  align-items: center;
-  cursor: pointer;
-  touch-action: manipulation;
-  font-family: $font_h;
-  font-style: italic;
-  font-size: 20px;
-  line-height: 22px;
-  z-index: 2;
+	background-color: $fon_color_w;
+	position: relative;
+	padding: 7px 10px;
+	text-align: right;
+	display: inline-flex;
+	justify-content: flex-end;
+	align-items: center;
+	cursor: pointer;
+	touch-action: manipulation;
+	font-family: $font_h;
+	font-style: italic;
+	font-size: 20px;
+	line-height: 22px;
+	z-index: 2;
 
-  &:hover {
-    @include shadow_hover;
-  }
+	&:hover {
+		@include shadow_hover;
+	}
 
-  &:focus {
-    @include shadow_hover;
-    outline: none;
-  }
+	&:focus {
+		@include shadow_hover;
+		outline: none;
+	}
 
-  .number {
-    background-color: $fon_color_w;
-    color: $main_color;
-    font-family: $font_text;
-    font-style: normal;
-    font-weight: 300;
-    font-size: 50px;
-    margin-left: 15px;
-    margin-bottom: -7px;
+	.number {
+		background-color: $fon_color_w;
+		color: $main_color;
+		font-family: $font_text;
+		font-style: normal;
+		font-weight: 300;
+		font-size: 50px;
+		margin-left: 15px;
+		margin-bottom: -7px;
 
-    span {
-      font-size: 22px;
-      font-weight: normal;
-    }
-  }
+		span {
+			font-size: 22px;
+			font-weight: normal;
+		}
+	}
 
-  .quest_wrap {
-    display: none;
-    margin-left: 10px;
-  }
+	.quest_wrap {
+		display: none;
+		margin-left: 10px;
+	}
 }
 
 .active_shadow_botton {
-  @include shadow_hover;
+	@include shadow_hover;
 }
 
 // // // // // // // //
 // // // // // // // //
 // Формы
 @mixin input_value_on {
-  color: $text_color_m;
-  top: -20px;
-  font-size: 12px;
-  line-height: 16px;
+	color: $text_color_m;
+	top: -20px;
+	font-size: 12px;
+	line-height: 16px;
 }
 @mixin input_animation($property) {
-  transition: $property 150ms ease-in-out 0ms;
+	transition: $property 150ms ease-in-out 0ms;
 }
 
 input[type="text"],
 input[type="tel"] {
-  background-color: $fon_color_w;
-  border: 1px solid #cccccc;
-  box-sizing: border-box;
-  box-shadow: 0px 1px 4px rgba(26, 26, 26, 0.3);
-  height: 50px;
-  padding: 0 20px;
-  font-size: 16px;
-  color: $text_color_m;
-  // outline: none;
-  @include input_animation(box-shadow);
+	background-color: $fon_color_w;
+	border: 1px solid #cccccc;
+	box-sizing: border-box;
+	box-shadow: 0px 1px 4px rgba(26, 26, 26, 0.3);
+	height: 50px;
+	padding: 0 20px;
+	font-size: 16px;
+	color: $text_color_m;
+	// outline: none;
+	@include input_animation(box-shadow);
 
-  &:focus {
-    box-shadow: 0px 5px 15px rgba(26, 26, 26, 0.3);
-  }
+	&:focus {
+		box-shadow: 0px 5px 15px rgba(26, 26, 26, 0.3);
+	}
 
-  &:focus + span {
-    @include input_value_on;
-  }
+	&:focus + span {
+		@include input_value_on;
+	}
 }
 
 .value_on {
-  @include input_value_on;
+	@include input_value_on;
 }
 
 label {
-  display: inline-block;
-  position: relative;
+	display: inline-block;
+	position: relative;
 
-  & > span {
-    color: #999999;
-    position: absolute;
-    left: 20px;
-    top: 0;
-    line-height: 50px;
-    cursor: text;
-    @include input_animation(all);
-    user-select: none;
-  }
+	& > span {
+		color: #999999;
+		position: absolute;
+		left: 20px;
+		top: 0;
+		line-height: 50px;
+		cursor: text;
+		@include input_animation(all);
+		user-select: none;
+	}
 
-  &:hover > span {
-    color: $text_color_m;
-  }
+	&:hover > span {
+		color: $text_color_m;
+	}
 }
 
 .form {
-  text-align: center;
+	text-align: center;
 
-  h3 {
-    font-family: $font_h;
-    font-weight: normal;
-    font-size: 30px;
-    line-height: 37px;
-    margin: 0 0 10px 0;
-  }
+	h3 {
+		font-family: $font_h;
+		font-weight: normal;
+		font-size: 30px;
+		line-height: 37px;
+		margin: 0 0 10px 0;
+	}
 
-  .l_text {
-    font-size: 14px;
-    line-height: 22px;
-  }
+	.l_text {
+		font-size: 14px;
+		line-height: 22px;
+	}
 
-  .wrap_input {
-    margin: 40px 0;
+	.wrap_input {
+		margin: 40px 0;
 
-    > text {
-      display: none;
-    }
+		> text {
+			display: none;
+		}
 
-    label {
-      margin-right: 26px;
-    }
+		label {
+			margin-right: 26px;
+		}
 
-    label:last-child {
-      margin-right: 0;
-    }
+		label:last-child {
+			margin-right: 0;
+		}
 
-    input {
-      width: $column_4;
-    }
-  }
+		input {
+			width: $column_4;
+		}
+	}
 
-  .personal_data_text {
-    color: #999999;
-    font-size: 12px;
-    line-height: 16px;
-    margin: 15px 0;
-  }
+	.personal_data_text {
+		color: #999999;
+		font-size: 12px;
+		line-height: 16px;
+		margin: 15px 0;
+	}
 }
 
 // // // // // // // //
 // // // // // // // //
 // Тултип
 .quest_wrap {
-  position: relative;
-  display: inline-block;
-  font-family: $font_text;
-  text-align: left;
-  font-style: normal;
+	position: relative;
+	display: inline-block;
+	font-family: $font_text;
+	text-align: left;
+	font-style: normal;
 }
 
 .quest::before {
-  content: "?";
+	content: "?";
 }
 
 .close::before {
-  content: "";
-  background: url(svg/close.svg) center center no-repeat;
+	content: "";
+	background: url("svg/close.svg") center center no-repeat;
 }
 
 .quest,
 .close {
-  background: $fon_color_w;
-  width: 26px;
-  height: 26px;
-  border-radius: 100px;
-  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.25);
-  cursor: pointer;
-  touch-action: manipulation;
+	background: $fon_color_w;
+	width: 26px;
+	height: 26px;
+	border-radius: 100px;
+	box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.25);
+	cursor: pointer;
+	touch-action: manipulation;
 
-  &::before {
-    font-size: 17px;
-    line-height: 0;
-    color: $main_color;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+	&::before {
+		font-size: 17px;
+		line-height: 0;
+		color: $main_color;
+		width: 100%;
+		height: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
 
-  &:hover {
-    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.35);
-  }
+	&:hover {
+		box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.35);
+	}
 }
 
 $tooltip_width: 350px;
 
 .tooltip {
-  background: $fon_color_w;
-  width: $tooltip_width;
-  padding: 15px 20px;
-  filter: drop-shadow(0px 2px 6px rgba(0, 0, 0, 0.3));
-  position: absolute;
-  left: calc((-#{$tooltip_width} / 2) + 50%);
-  opacity: 0;
-  transition: ease-in 0ms;
-  transition-property: opacity, top;
+	background: $fon_color_w;
+	width: $tooltip_width;
+	padding: 15px 20px;
+	filter: drop-shadow(0px 2px 6px rgba(0, 0, 0, 0.3));
+	position: absolute;
+	left: calc((-#{$tooltip_width} / 2) + 50%);
+	opacity: 0;
+	transition: ease-in 0ms;
+	transition-property: opacity, top;
 
-  &::after {
-    content: "";
-    background: inherit;
-    opacity: inherit;
-    width: 25px;
-    height: 25px;
-    position: absolute;
-    left: calc(50% - 25px / 2);
-    bottom: -10px;
-    transform: rotate(45deg);
-  }
+	&::after {
+		content: "";
+		background: inherit;
+		opacity: inherit;
+		width: 25px;
+		height: 25px;
+		position: absolute;
+		left: calc(50% - 25px / 2);
+		bottom: -10px;
+		transform: rotate(45deg);
+	}
 
-  &::after {
-    z-index: -1;
-    box-shadow: inherit;
-  }
+	&::after {
+		z-index: -1;
+		box-shadow: inherit;
+	}
 
-  .close {
-    position: absolute;
-    top: -13px;
-    right: -13px;
-  }
+	.close {
+		position: absolute;
+		top: -13px;
+		right: -13px;
+	}
 
-  p {
-    margin: 0;
-  }
+	p {
+		margin: 0;
+	}
 }
 
 .tooltip_right {
-  .tooltip {
-    left: calc(-#{$tooltip_width} + 35px);
+	.tooltip {
+		left: calc(-#{$tooltip_width} + 35px);
 
-    &::after {
-      left: calc(100% - 35px);
-    }
-  }
+		&::after {
+			left: calc(100% - 35px);
+		}
+	}
 }
 
 // // // // // // // //
 // // // // // // // //
 // Сдайдер
 :root {
-  --swiper-theme-color: #{$main_color} !important;
+	--swiper-theme-color: #{$main_color} !important;
 }
 
 @media screen and (min-width: 716px) {
-  .swiper-container {
-    display: none;
-  }
+	.swiper-container {
+		display: none;
+	}
 }
 
 body {
-  .swiper-container {
-    padding-bottom: 50px;
+	.swiper-container {
+		padding-bottom: 50px;
 
-    .shadow_botton {
-      cursor: auto;
+		.shadow_botton {
+			cursor: auto;
 
-      &:hover {
-        box-shadow: none;
-      }
+			&:hover {
+				box-shadow: none;
+			}
 
-      &:focus {
-        box-shadow: none;
-      }
-    }
-  }
+			&:focus {
+				box-shadow: none;
+			}
+		}
+	}
 
-  .swiper-container-horizontal > .swiper-pagination-bullets,
-  .swiper-pagination-custom,
-  .swiper-pagination-fraction {
-    bottom: 0;
-  }
+	.swiper-container-horizontal > .swiper-pagination-bullets,
+	.swiper-pagination-custom,
+	.swiper-pagination-fraction {
+		bottom: 0;
+	}
 
-  .swiper-pagination-bullet {
-    width: 10px;
-    height: 10px;
-  }
+	.swiper-pagination-bullet {
+		width: 10px;
+		height: 10px;
+	}
 
-  .swiper-container-horizontal
-    > .swiper-pagination-bullets
-    .swiper-pagination-bullet {
-    margin: 0 10px;
-  }
+	.swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet {
+		margin: 0 10px;
+	}
 }
 
 // // // // // // // //
@@ -456,72 +454,72 @@ body {
 .gauge,
 .rught_choice,
 .map_mimicry {
-  padding: 100px 0;
+	padding: 100px 0;
 }
 
 .top_lock,
 .very_fast,
 .confidentiality {
-  background: $fon_color_b;
-  color: $fon_color_w;
+	background: $fon_color_b;
+	color: $fon_color_w;
 }
 
 .content {
-  width: $column_12;
-  margin: 0 auto;
-  display: flex;
-  flex-wrap: wrap;
-  position: relative;
+	width: $column_12;
+	margin: 0 auto;
+	display: flex;
+	flex-wrap: wrap;
+	position: relative;
 }
 
 .description {
-  padding: 20px;
-  background-color: $fon_color_w;
-  @include shadow_hover;
-  transition: opacity 300ms ease-out 0ms;
+	padding: 20px;
+	background-color: $fon_color_w;
+	@include shadow_hover;
+	transition: opacity 300ms ease-out 0ms;
 
-  position: absolute;
-  top: 0;
-  left: 0;
+	position: absolute;
+	top: 0;
+	left: 0;
 }
 
 .img_wrap {
-  position: relative;
+	position: relative;
 
-  img {
-    transition: opacity 300ms ease-out 0ms;
-    width: inherit;
-    position: absolute;
-    top: 0;
-    left: 0;
-  }
+	img {
+		transition: opacity 300ms ease-out 0ms;
+		width: inherit;
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
 }
 
 .accented_line {
-  padding-left: 15px;
-  border-left: 2px solid $main_color;
-  font-family: $font_h;
-  font-size: 18px;
-  line-height: 25px;
+	padding-left: 15px;
+	border-left: 2px solid $main_color;
+	font-family: $font_h;
+	font-size: 18px;
+	line-height: 25px;
 }
 
 .accented {
-  font-family: $font_h;
-  font-size: 22px;
-  line-height: 27px;
+	font-family: $font_h;
+	font-size: 22px;
+	line-height: 27px;
 }
 
 .advantage_block {
-  width: $column_4;
-  position: relative;
+	width: $column_4;
+	position: relative;
 }
 
 img {
-  width: auto;
+	width: auto;
 }
 
 .main_dor_mobile {
-  display: none;
+	display: none;
 }
 
 // // // // // // // // // // // // // // // //
@@ -530,128 +528,128 @@ img {
 // // // // // // // // // // // // // // // //
 // Доступная безопасность
 .affordable_security {
-  position: relative;
-  background: $blur_bac_1 no-repeat center;
-  background-size: cover;
+	position: relative;
+	background: $blur_bac_1 no-repeat center;
+	background-size: cover;
 
-  min-height: 981px;
+	min-height: 981px;
 
-  .main_img_dor {
-    display: block;
-    position: absolute;
-    left: calc(((100% - #{$column_12}) / 2) - 7px);
-    top: 33px;
-    z-index: 2;
-  }
+	.main_img_dor {
+		display: block;
+		position: absolute;
+		left: calc(((100% - #{$column_12}) / 2) - 7px);
+		top: 33px;
+		z-index: 2;
+	}
 
-  .blur {
-    width: calc(#{$column_12} + ((100% - #{$column_12}) / 2));
+	.blur {
+		width: calc(#{$column_12} + ((100% - #{$column_12}) / 2));
 
-    &::after {
-      background-image: $blur_bac_1;
-      min-height: 981px;
-      left: calc(0px - (100vw - #{$column_12}) / 2);
-    }
-  }
+		&::after {
+			background-image: $blur_bac_1;
+			min-height: 981px;
+			left: calc(0px - (100vw - #{$column_12}) / 2);
+		}
+	}
 
-  .content {
-    position: relative;
-    z-index: 1;
-    margin: 0;
-    padding: 60px 0 60px 510px;
-  }
+	.content {
+		position: relative;
+		z-index: 1;
+		margin: 0;
+		padding: 60px 0 60px 510px;
+	}
 
-  .icons {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    margin: 50px 0;
-  }
+	.icons {
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+		margin: 50px 0;
+	}
 
-  .botton_wrap {
-    display: flex;
-    width: 100%;
-  }
+	.botton_wrap {
+		display: flex;
+		width: 100%;
+	}
 
-  .botton {
-    margin-right: 40px;
-  }
+	.botton {
+		margin-right: 40px;
+	}
 
-  .prise {
-    margin-bottom: 40px;
+	.prise {
+		margin-bottom: 40px;
 
-    p {
-      margin: 0;
-    }
+		p {
+			margin: 0;
+		}
 
-    div p {
-      color: $main_color;
-      font-family: $font_h;
-      font-size: 22px;
-      line-height: 27px;
-    }
+		div p {
+			color: $main_color;
+			font-family: $font_h;
+			font-size: 22px;
+			line-height: 27px;
+		}
 
-    div {
-      margin-bottom: 3px;
-    }
-  }
+		div {
+			margin-bottom: 3px;
+		}
+	}
 
-  .new {
-    font-weight: 500;
-    display: inline-block;
-    margin-right: 40px;
+	.new {
+		font-weight: 500;
+		display: inline-block;
+		margin-right: 40px;
 
-    span {
-      font-weight: normal;
-      font-size: 36px;
-      line-height: 44px;
-    }
-  }
+		span {
+			font-weight: normal;
+			font-size: 36px;
+			line-height: 44px;
+		}
+	}
 
-  .old {
-    display: inline-block;
-    font-size: 19px;
-    line-height: 26px;
-    color: #666666;
-    position: relative;
+	.old {
+		display: inline-block;
+		font-size: 19px;
+		line-height: 26px;
+		color: #666666;
+		position: relative;
 
-    &::before {
-      content: "";
-      display: block;
-      background-color: #666666;
-      width: 100%;
-      height: 2px;
-      position: absolute;
-      top: 50%;
-      left: 0;
-      transform: matrix(1, -0.1, 0, 1, 0, 0);
-      opacity: 0.8;
-    }
+		&::before {
+			content: "";
+			display: block;
+			background-color: #666666;
+			width: 100%;
+			height: 2px;
+			position: absolute;
+			top: 50%;
+			left: 0;
+			transform: matrix(1, -0.1, 0, 1, 0, 0);
+			opacity: 0.8;
+		}
 
-    span {
-      font-family: "Roboto", sans-serif;
-    }
-  }
+		span {
+			font-family: "Roboto", sans-serif;
+		}
+	}
 
-  .discount {
-    display: inline-block;
-    span {
-      font-weight: 300;
-      font-size: 36px;
-      line-height: 44px;
-    }
-  }
+	.discount {
+		display: inline-block;
+		span {
+			font-weight: 300;
+			font-size: 36px;
+			line-height: 44px;
+		}
+	}
 }
 
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-  /* IE10+ specific styles go here */
-  .blur::after {
-    opacity: 0.05 !important;
-  }
+	/* IE10+ specific styles go here */
+	.blur::after {
+		opacity: 0.05 !important;
+	}
 
-  .blur {
-    background-color: #f6f2ef;
-  }
+	.blur {
+		background-color: #f6f2ef;
+	}
 }
 // // // // // // // //
 // // // // // // // //
@@ -659,46 +657,46 @@ img {
 // // // // // // // //
 // Основательно, Прочно, Надежно
 .door_advantages {
-  padding: 148px 0 132px;
+	padding: 148px 0 132px;
 
-  .content {
-    min-height: 868px;
-    align-content: flex-start;
-  }
+	.content {
+		min-height: 868px;
+		align-content: flex-start;
+	}
 
-  .text_wrap {
-    margin-bottom: 70px;
-  }
+	.text_wrap {
+		margin-bottom: 70px;
+	}
 
-  .botton_wrap {
-    width: 320px;
-    text-align: right;
-    position: relative;
-    margin: 0 $column_4 90px 30px;
-  }
+	.botton_wrap {
+		width: 320px;
+		text-align: right;
+		position: relative;
+		margin: 0 $column_4 90px 30px;
+	}
 
-  .img_wrap {
-    position: absolute;
-    background: url(img/dor_fon-min.png) no-repeat center;
-    background-size: cover;
-    top: -65px;
-    right: -9px;
-    width: 426px;
-    height: 1066px;
-  }
+	.img_wrap {
+		position: absolute;
+		background: url(img/dor_fon-min.png) no-repeat center;
+		background-size: cover;
+		top: -65px;
+		right: -9px;
+		width: 426px;
+		height: 1066px;
+	}
 
-  .botton {
-    position: absolute;
-    right: $column_5;
-    bottom: 0;
-  }
+	.botton {
+		position: absolute;
+		right: $column_5;
+		bottom: 0;
+	}
 }
 
 .door_advantages .text_wrap,
 .security_points .text_wrap {
-  display: block;
-  width: $column_7;
-  margin-right: calc(#{$column_12} - #{$column_7});
+	display: block;
+	width: $column_7;
+	margin-right: calc(#{$column_12} - #{$column_7});
 }
 // // // // // // // //
 // // // // // // // //
@@ -706,96 +704,96 @@ img {
 // // // // // // // //
 // Замки высшего класса секретности
 .top_lock {
-  // .content {
-  //   display: flex;
-  // }
+	// .content {
+	//   display: flex;
+	// }
 
-  .img_wrap {
-    width: $column_6;
-    height: 851px;
-    align-self: center;
-    z-index: 2;
-  }
+	.img_wrap {
+		width: $column_6;
+		height: 851px;
+		align-self: center;
+		z-index: 2;
+	}
 
-  .text_wrap {
-    width: $column_6;
-    z-index: 1;
-  }
+	.text_wrap {
+		width: $column_6;
+		z-index: 1;
+	}
 
-  .lock_static_wrap {
-    display: none;
-  }
+	.lock_static_wrap {
+		display: none;
+	}
 
-  h2 {
-    letter-spacing: -0.02em;
-  }
+	h2 {
+		letter-spacing: -0.02em;
+	}
 
-  .icon_text {
-    display: flex;
-    align-items: center;
-    margin-bottom: 30px;
+	.icon_text {
+		display: flex;
+		align-items: center;
+		margin-bottom: 30px;
 
-    img {
-      display: block;
-      margin-right: 20px;
-      flex-basis: 100px;
-    }
+		svg {
+			display: block;
+			margin-right: 20px;
+			flex-basis: 100px;
+		}
 
-    p {
-      margin: 0;
-    }
-  }
+		p {
+			margin: 0;
+		}
+	}
 
-  .botton_wrap {
-    flex-direction: column;
-    margin: 40px 0;
-    padding-left: 100px;
+	.botton_wrap {
+		flex-direction: column;
+		margin: 40px 0;
+		padding-left: 100px;
 
-    .shadow_botton_wrap {
-      width: auto;
-    }
+		.shadow_botton_wrap {
+			width: auto;
+		}
 
-    .horizontal_line {
-      transition-delay: 50ms;
-    }
+		.horizontal_line {
+			transition-delay: 50ms;
+		}
 
-    .shadow_botton {
-      background-color: rgba(0, 0, 0, 0);
-      font-family: $font_h;
-      font-weight: 500;
-      font-size: 38px;
-      line-height: 46px;
-      text-align: left;
+		.shadow_botton {
+			background-color: rgba(0, 0, 0, 0);
+			font-family: $font_h;
+			font-weight: 500;
+			font-size: 38px;
+			line-height: 46px;
+			text-align: left;
 
-      display: inline-flex;
-      flex-direction: column;
-      align-items: flex-start;
-      padding: 3px 15px 9px;
+			display: inline-flex;
+			flex-direction: column;
+			align-items: flex-start;
+			padding: 3px 15px 9px;
 
-      &:hover {
-        @include shadow_active;
-      }
+			&:hover {
+				@include shadow_active;
+			}
 
-      &:focus {
-        @include shadow_active;
-      }
+			&:focus {
+				@include shadow_active;
+			}
 
-      span {
-        font-style: italic;
-        font-weight: normal;
-        font-size: 16px;
-        line-height: 24px;
-      }
-    }
+			span {
+				font-style: italic;
+				font-weight: normal;
+				font-size: 16px;
+				line-height: 24px;
+			}
+		}
 
-    .active_shadow_botton {
-      @include shadow_active;
-    }
-  }
+		.active_shadow_botton {
+			@include shadow_active;
+		}
+	}
 
-  .accented_line {
-    margin-bottom: 40px;
-  }
+	.accented_line {
+		margin-bottom: 40px;
+	}
 }
 // // // // // // // //
 // // // // // // // //
@@ -803,67 +801,67 @@ img {
 // // // // // // // //
 // 13 точек Вашей безопасности
 .security_points {
-  .content {
-    min-height: 876px;
-    align-content: flex-start;
-  }
+	.content {
+		min-height: 876px;
+		align-content: flex-start;
+	}
 
-  .text_wrap {
-    .accented {
-      margin-top: 70px;
-      margin-bottom: 30px;
-    }
-  }
+	.text_wrap {
+		.accented {
+			margin-top: 70px;
+			margin-bottom: 30px;
+		}
+	}
 
-  .botton_wrap {
-    position: relative;
-    width: $column_4;
-    margin: 0 $column_4 90px 30px;
-    text-align: left;
-  }
+	.botton_wrap {
+		position: relative;
+		width: $column_4;
+		margin: 0 $column_4 90px 30px;
+		text-align: left;
+	}
 
-  .shadow_botton {
-    display: inline-flex;
-    text-align: left;
+	.shadow_botton {
+		display: inline-flex;
+		text-align: left;
 
-    .number {
-      background: none;
-      font-family: $font_text;
-      font-size: 52px;
-      margin: 0 4px 1px 0;
-    }
+		.number {
+			background: none;
+			font-family: $font_text;
+			font-size: 52px;
+			margin: 0 4px 1px 0;
+		}
 
-    div > span {
-      display: block;
-    }
+		div > span {
+			display: block;
+		}
 
-    div > span:nth-child(1) {
-      color: $main_color;
-      font-size: 16px;
-      line-height: 22px;
-    }
+		div > span:nth-child(1) {
+			color: $main_color;
+			font-size: 16px;
+			line-height: 22px;
+		}
 
-    div > span:nth-child(2) {
-      font-size: 20px;
-      line-height: 22px;
-    }
-  }
+		div > span:nth-child(2) {
+			font-size: 20px;
+			line-height: 22px;
+		}
+	}
 
-  .img_wrap {
-    width: 410px;
-    height: 876px;
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    background: url("img/dorToch000.png") no-repeat center;
-    background-size: cover;
-  }
+	.img_wrap {
+		width: 410px;
+		height: 876px;
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		background: url("img/dorToch000.png") no-repeat center;
+		background-size: cover;
+	}
 
-  .botton {
-    position: absolute;
-    right: $column_5;
-    bottom: 0;
-  }
+	.botton {
+		position: absolute;
+		right: $column_5;
+		bottom: 0;
+	}
 }
 // // // // // // // //
 // // // // // // // //
@@ -871,57 +869,57 @@ img {
 // // // // // // // //
 // БЫСТРО? ОЧЕНЬ БЫСТРО!
 .very_fast {
-  .content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
+	.content {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
 
-  .text_wrap {
-    width: $column_8;
-    text-align: center;
-  }
+	.text_wrap {
+		width: $column_8;
+		text-align: center;
+	}
 
-  .icons_wrap {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    width: 940px;
-    margin: 70px 0;
+	.icons_wrap {
+		display: flex;
+		justify-content: space-between;
+		align-items: baseline;
+		width: 940px;
+		margin: 70px 0;
 
-    .arrow {
-      background: url("svg/arrow.svg") center center no-repeat;
-      width: 26px;
-      height: 46px;
-    }
+		.arrow {
+			background: url("svg/arrow.svg") center center no-repeat;
+			width: 26px;
+			height: 46px;
+		}
 
-    img {
-      flex-basis: 117px;
-    }
+		svg {
+			flex-basis: 117px;
+		}
 
-    .icon_text {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      width: 125px;
+		.icon_text {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			width: 125px;
 
-      p {
-        font-family: $font_h;
-        font-style: italic;
-        font-size: 20px;
-        line-height: 24px;
-        text-align: center;
-      }
-    }
-  }
+			p {
+				font-family: $font_h;
+				font-style: italic;
+				font-size: 20px;
+				line-height: 24px;
+				text-align: center;
+			}
+		}
+	}
 
-  .value_on {
-    color: $fon_color_w;
-  }
+	.value_on {
+		color: $fon_color_w;
+	}
 
-  .wrap_input input:focus + span {
-    color: $fon_color_w;
-  }
+	.wrap_input input:focus + span {
+		color: $fon_color_w;
+	}
 }
 // // // // // // // //
 // // // // // // // //
@@ -929,92 +927,92 @@ img {
 // // // // // // // //
 // ДВЕРЬ С БРОНЕПАКЕТОМ
 .door_armor {
-  overflow-y: hidden;
+	overflow-y: hidden;
 
-  .content {
-    flex-wrap: nowrap;
-  }
+	.content {
+		flex-wrap: nowrap;
+	}
 
-  .crutch_container1 {
-    margin: -100px 30px -100px 0;
-    width: $column_6;
-    z-index: 2;
-  }
+	.crutch_container1 {
+		margin: -100px 30px -100px 0;
+		width: $column_6;
+		z-index: 2;
+	}
 
-  .crutch_container2 {
-    width: 100%;
-    height: 100%;
-    position: relative;
-    display: inline-flex;
-    justify-content: flex-end;
-    align-items: center;
-  }
+	.crutch_container2 {
+		width: 100%;
+		height: 100%;
+		position: relative;
+		display: inline-flex;
+		justify-content: flex-end;
+		align-items: center;
+	}
 
-  .img_wrap {
-    background: url("img/dorBron0.png") center right no-repeat;
-    background-size: cover;
-    width: 906px;
-    height: 1345px;
-    position: absolute;
-    right: 38px;
-  }
+	.img_wrap {
+		background: url("img/dorBron0.png") center right no-repeat;
+		background-size: cover;
+		width: 906px;
+		height: 1345px;
+		position: absolute;
+		right: 38px;
+	}
 
-  .text_wrap {
-    width: $column_6;
-    z-index: 1;
-  }
+	.text_wrap {
+		width: $column_6;
+		z-index: 1;
+	}
 
-  .advantages_wrap {
-    margin: 40px 0;
-  }
+	.advantages_wrap {
+		margin: 40px 0;
+	}
 
-  .advantages {
-    display: inline-block;
-    margin-right: 40px;
-    padding-right: 41px;
-    position: relative;
+	.advantages {
+		display: inline-block;
+		margin-right: 40px;
+		padding-right: 41px;
+		position: relative;
 
-    &:last-child {
-      margin-right: 0;
-    }
+		&:last-child {
+			margin-right: 0;
+		}
 
-    .adv_h {
-      font-family: $font_h;
-      font-size: 32px;
-      line-height: 39px;
-      color: $main_color;
-      margin: 0;
-    }
+		.adv_h {
+			font-family: $font_h;
+			font-size: 32px;
+			line-height: 39px;
+			color: $main_color;
+			margin: 0;
+		}
 
-    .adv_p {
-      margin: -3px 0 0 0;
-    }
+		.adv_p {
+			margin: -3px 0 0 0;
+		}
 
-    .quest_wrap {
-      position: absolute;
-      right: 0;
-      top: 7px;
-    }
-  }
+		.quest_wrap {
+			position: absolute;
+			right: 0;
+			top: 7px;
+		}
+	}
 
-  .botton_wrap {
-    padding-right: 160px;
-    text-align: right;
-    margin: 40px 0;
-  }
+	.botton_wrap {
+		padding-right: 160px;
+		text-align: right;
+		margin: 40px 0;
+	}
 
-  .shadow_botton_wrap {
-    display: inline-block;
-    width: auto;
-  }
+	.shadow_botton_wrap {
+		display: inline-block;
+		width: auto;
+	}
 
-  .horizontal_line {
-    transition-delay: 50ms;
-  }
+	.horizontal_line {
+		transition-delay: 50ms;
+	}
 
-  .botton {
-    margin-top: 40px;
-  }
+	.botton {
+		margin-top: 40px;
+	}
 }
 // // // // // // // //
 // // // // // // // //
@@ -1022,30 +1020,30 @@ img {
 // // // // // // // //
 // Сохраним тепло и уют в Вашем доме
 .warmth_consiness {
-  position: relative;
-  background: $blur_bac_2 no-repeat center bottom;
-  background-size: cover;
+	position: relative;
+	background: $blur_bac_2 no-repeat center bottom;
+	background-size: cover;
 
-  .blur {
-    width: calc(#{$column_8 + 30px} + ((100% - #{$column_12}) / 2));
+	.blur {
+		width: calc(#{$column_8 + 30px} + ((100% - #{$column_12}) / 2));
 
-    &::after {
-      background-image: $blur_bac_2;
-      left: calc(0px - (100vw - #{$column_4 + 60px}) / 2);
-      background-position: center bottom;
-    }
-  }
+		&::after {
+			background-image: $blur_bac_2;
+			left: calc(0px - (100vw - #{$column_4 + 60px}) / 2);
+			background-position: center bottom;
+		}
+	}
 
-  .content {
-    width: $column_8;
-    margin: 0;
-    z-index: 1;
-    padding: 60px 0 60px 60px;
-  }
+	.content {
+		width: $column_8;
+		margin: 0;
+		z-index: 1;
+		padding: 60px 0 60px 60px;
+	}
 
-  .botton {
-    margin-top: 40px;
-  }
+	.botton {
+		margin-top: 40px;
+	}
 }
 // // // // // // // //
 // // // // // // // //
@@ -1053,22 +1051,22 @@ img {
 // // // // // // // //
 // Гарантия конфиденциальности
 .confidentiality {
-  .content {
-    justify-content: space-between;
-  }
+	.content {
+		justify-content: space-between;
+	}
 
-  .text_wrap {
-    width: $column_7;
-  }
+	.text_wrap {
+		width: $column_7;
+	}
 
-  .tubus {
-    margin: -70px 0 -140px;
-    align-self: center;
-  }
+	.tubus {
+		margin: -70px 0 -140px;
+		align-self: center;
+	}
 
-  .botton {
-    margin-top: 40px;
-  }
+	.botton {
+		margin-top: 40px;
+	}
 }
 // // // // // // // //
 // // // // // // // //
@@ -1076,30 +1074,30 @@ img {
 // // // // // // // //
 // Выше облаков: 40 лет качества
 .years_quality {
-  position: relative;
-  background: $blur_bac_3 no-repeat center;
-  background-size: cover;
+	position: relative;
+	background: $blur_bac_3 no-repeat center;
+	background-size: cover;
 
-  .blur {
-    width: calc(#{$column_8 + 30px} + ((100% - #{$column_12}) / 2));
+	.blur {
+		width: calc(#{$column_8 + 30px} + ((100% - #{$column_12}) / 2));
 
-    &::after {
-      background-image: $blur_bac_3;
-      left: calc(0px - (100vw - #{$column_4 + 60px}) / 2);
-    }
-  }
+		&::after {
+			background-image: $blur_bac_3;
+			left: calc(0px - (100vw - #{$column_4 + 60px}) / 2);
+		}
+	}
 
-  .content {
-    width: $column_8;
-    margin: 0;
-    z-index: 1;
-    padding: 60px 0 60px 60px;
-  }
+	.content {
+		width: $column_8;
+		margin: 0;
+		z-index: 1;
+		padding: 60px 0 60px 60px;
+	}
 
-  .botton_wrap {
-    @include botton_wrap;
-    margin-top: 40px;
-  }
+	.botton_wrap {
+		@include botton_wrap;
+		margin-top: 40px;
+	}
 }
 // // // // // // // //
 // // // // // // // //
@@ -1107,10 +1105,10 @@ img {
 // // // // // // // //
 // Вызвать замерщика бесплатно
 .gauge {
-  .text_wrap {
-    width: 100%;
-    text-align: center;
-  }
+	.text_wrap {
+		width: 100%;
+		text-align: center;
+	}
 }
 // // // // // // // //
 // // // // // // // //
@@ -1118,62 +1116,62 @@ img {
 // // // // // // // //
 // Почему дверь «СТАНДАРТ» - это правильный выбор?
 .rught_choice {
-  position: relative;
-  overflow-y: hidden;
+	position: relative;
+	overflow-y: hidden;
 
-  &::before {
-    content: "";
-    display: block;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    background: $blur_bac_1 no-repeat center;
-    transform: scaleX(-1);
-  }
+	&::before {
+		content: "";
+		display: block;
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+		background: $blur_bac_1 no-repeat center;
+		transform: scaleX(-1);
+	}
 
-  .blur {
-    width: calc(#{$column_12} + ((100% - #{$column_12}) / 2));
-    margin-left: 0;
-    margin-right: auto;
+	.blur {
+		width: calc(#{$column_12} + ((100% - #{$column_12}) / 2));
+		margin-left: 0;
+		margin-right: auto;
 
-    &::after {
-      background-image: $blur_bac_1;
-      right: calc(0px - (100vw - #{$column_12}) / 2);
-      background-position: center;
-      transform: scaleX(-1);
-    }
-  }
+		&::after {
+			background-image: $blur_bac_1;
+			right: calc(0px - (100vw - #{$column_12}) / 2);
+			background-position: center;
+			transform: scaleX(-1);
+		}
+	}
 
-  .content {
-    width: $column_12;
-    z-index: 1;
-    padding: 60px 60px 60px 0;
-    margin: 0 0 0 auto;
-  }
+	.content {
+		width: $column_12;
+		z-index: 1;
+		padding: 60px 60px 60px 0;
+		margin: 0 0 0 auto;
+	}
 
-  .text_wrap {
-    width: $column_8;
-  }
+	.text_wrap {
+		width: $column_8;
+	}
 
-  .accented_line {
-    width: $column_6;
-    margin-top: 30px;
-  }
+	.accented_line {
+		width: $column_6;
+		margin-top: 30px;
+	}
 
-  .botton_wrap {
-    @include botton_wrap;
-    margin-top: 40px;
-  }
+	.botton_wrap {
+		@include botton_wrap;
+		margin-top: 40px;
+	}
 
-  .choice_img_dor {
-    position: absolute;
-    top: 100px;
-    right: calc((100% - #{$column_12}) / 2);
-    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.4);
-    z-index: 2;
-  }
+	.choice_img_dor {
+		position: absolute;
+		top: 100px;
+		right: calc((100% - #{$column_12}) / 2);
+		box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.4);
+		z-index: 2;
+	}
 }
 // // // // // // // //
 // // // // // // // //
@@ -1181,1274 +1179,1264 @@ img {
 // // // // // // // //
 // В Санкт-Петербурге 20 магазинов Эльбор
 .map_mimicry {
-  .comtent {
-    @include shadow_active;
-    background: $blur_bac_4 no-repeat center;
-  }
+	.comtent {
+		@include shadow_active;
+		background: $blur_bac_4 no-repeat center;
+	}
 
-  .crutch_container1 {
-    width: $column_12;
-    height: 460px;
-    margin: 0 auto;
-  }
+	.crutch_container1 {
+		width: $column_12;
+		height: 460px;
+		margin: 0 auto;
+	}
 
-  .text_wrap {
-    height: 100%;
-    margin-left: #{$column_3 + 30};
-    padding-left: #{$column_2 + 30};
-    background-color: $fon_color_w;
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 300px 100%);
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
+	.text_wrap {
+		height: 100%;
+		margin-left: #{$column_3 + 30};
+		padding-left: #{$column_2 + 30};
+		background-color: $fon_color_w;
+		clip-path: polygon(0 0, 100% 0, 100% 100%, 300px 100%);
+		text-align: center;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
 
-  .h1_mimicry {
-    text-transform: none;
-  }
+	.h1_mimicry {
+		text-transform: none;
+	}
 
-  .line_break {
-    display: none;
-  }
+	.line_break {
+		display: none;
+	}
 
-  .botton {
-    margin-top: 16px;
-  }
+	.botton {
+		margin-top: 16px;
+	}
 }
 // // // // // // // // // // // // // // // //
 // // // // // // // // // // // // // // // //
 // // // // // // // // // // // // // // // //
 // // // // // // // // // // // // // // // //
 @media screen and (max-width: 1220px) {
-  // // // // // // // //
-  // Текст
-  h1,
-  .h1_mimicry {
-    margin: 0;
-    font-size: 42px;
-    line-height: 60px;
+	// // // // // // // //
+	// Текст
+	h1,
+	.h1_mimicry {
+		margin: 0;
+		font-size: 42px;
+		line-height: 60px;
 
-    &:first-child {
-      margin-top: -10px;
-    }
-  }
+		&:first-child {
+			margin-top: -10px;
+		}
+	}
 
-  p {
-    @include p_l;
-    margin-bottom: 10px;
+	p {
+		@include p_l;
+		margin-bottom: 10px;
 
-    &:first-of-type {
-      margin-top: 0;
-    }
-  }
+		&:first-of-type {
+			margin-top: 0;
+		}
+	}
 
-  .botton,
-  .botton_ghost {
-    font-size: 20px;
-    padding: 0 10px 2px;
-  }
-  // // // // // // // //
-  // Кнопки
-  .shadow_botton {
-    .quest_wrap {
-      display: block;
-    }
-  }
-  // // // // // // // //
-  // Остальное
-  .top_lock,
-  .security_points,
-  .very_fast,
-  .door_armor,
-  .warmth_consiness,
-  .confidentiality,
-  .years_quality,
-  .gauge,
-  .rught_choice,
-  .map_mimicry {
-    padding: 70px 0;
-  }
+	.botton,
+	.botton_ghost {
+		font-size: 20px;
+		padding: 0 10px 2px;
+	}
+	// // // // // // // //
+	// Кнопки
+	.shadow_botton {
+		.quest_wrap {
+			display: block;
+		}
+	}
+	// // // // // // // //
+	// Остальное
+	.top_lock,
+	.security_points,
+	.very_fast,
+	.door_armor,
+	.warmth_consiness,
+	.confidentiality,
+	.years_quality,
+	.gauge,
+	.rught_choice,
+	.map_mimicry {
+		padding: 70px 0;
+	}
 
-  .content {
-    width: $column_10_1200;
-  }
+	.content {
+		width: $column_10_1200;
+	}
 
-  .blur::after {
-    top: -70px;
-    height: calc(100% + 140px);
-  }
-  // // // // // // // //
-  // // // // // // // //
-  // // // // // // // //
-  // // // // // // // //
-  // Доступная безопасность
-  .affordable_security {
-    min-height: 829px;
-    padding: 100px 0 10px 0;
+	.blur::after {
+		top: -70px;
+		height: calc(100% + 140px);
+	}
+	// // // // // // // //
+	// // // // // // // //
+	// // // // // // // //
+	// // // // // // // //
+	// Доступная безопасность
+	.affordable_security {
+		min-height: 829px;
+		padding: 100px 0 10px 0;
 
-    .main_img_dor {
-      height: 893px;
-      top: 44px;
-      left: calc(((100% - #{$column_10_1200}) / 2) - 7px);
-    }
+		.main_img_dor {
+			height: 893px;
+			top: 44px;
+			left: calc(((100% - #{$column_10_1200}) / 2) - 7px);
+		}
 
-    .blur {
-      width: calc(#{$column_10_1200} + ((100% - #{$column_10_1200}) / 2));
+		.blur {
+			width: calc(#{$column_10_1200} + ((100% - #{$column_10_1200}) / 2));
 
-      &::after {
-        left: calc(0px - (100vw - #{$column_10_1200}) / 2);
-        height: calc(100% + 170px);
-        min-height: auto;
-        top: -100px;
-      }
-    }
+			&::after {
+				left: calc(0px - (100vw - #{$column_10_1200}) / 2);
+				height: calc(100% + 170px);
+				min-height: auto;
+				top: -100px;
+			}
+		}
 
-    .content {
-      padding: 40px 0 40px #{$column_4_1200 + 30};
-    }
+		.content {
+			padding: 40px 0 40px #{$column_4_1200 + 30};
+		}
 
-    .icons {
-      margin: 40px 0;
-    }
+		.icons {
+			margin: 40px 0;
+		}
 
-    .botton_wrap {
-      a {
-        flex-grow: 1;
-        flex-basis: 100px;
-        min-width: 0;
-        margin-right: 30px;
+		.botton_wrap {
+			a {
+				flex-grow: 1;
+				flex-basis: 100px;
+				min-width: 0;
+				margin-right: 30px;
 
-        &:last-child {
-          margin-right: 0;
-        }
-      }
-    }
-  }
-  // // // // // // // //
-  // // // // // // // //
-  // // // // // // // //
-  // // // // // // // //
-  // Основательно, Прочно, Надежно
-  .door_advantages {
-    padding: 97px 0 70px;
+				&:last-child {
+					margin-right: 0;
+				}
+			}
+		}
+	}
+	// // // // // // // //
+	// // // // // // // //
+	// // // // // // // //
+	// // // // // // // //
+	// Основательно, Прочно, Надежно
+	.door_advantages {
+		padding: 97px 0 70px;
 
-    .content {
-      min-height: 809px;
-    }
+		.content {
+			min-height: 809px;
+		}
 
-    .text_wrap {
-      width: $column_6_1200;
-      margin-right: calc(#{$column_10_1200} - #{$column_6_1200});
-    }
+		.text_wrap {
+			width: $column_6_1200;
+			margin-right: calc(#{$column_10_1200} - #{$column_6_1200});
+		}
 
-    .img_wrap {
-      height: 890px;
-      width: 356px;
-      top: -10px;
-      right: -7px;
-    }
+		.img_wrap {
+			height: 890px;
+			width: 356px;
+			top: -10px;
+			right: -7px;
+		}
 
-    .advantage_block {
-      display: none;
-    }
+		.advantage_block {
+			display: none;
+		}
 
-    .botton_wrap {
-      margin-left: 0;
-      width: $column_5_1200;
-    }
+		.botton_wrap {
+			margin-left: 0;
+			width: $column_5_1200;
+		}
 
-    .shadow_botton_wrap .horizontal_line {
-      left: 100% !important;
-    }
+		.shadow_botton_wrap .horizontal_line {
+			left: 100% !important;
+		}
 
-    .shadow_botton_wrap .vertical_line {
-      display: none;
-    }
+		.shadow_botton_wrap .vertical_line {
+			display: none;
+		}
 
-    .botton {
-      right: $column_5_1200 + 30;
-    }
-  }
-  // // // // // // // //
-  // // // // // // // //
-  // // // // // // // //
-  // // // // // // // //
-  // Замки высшего класса секретности
-  .top_lock {
-    .img_wrap {
-      width: $column_5_1200;
-      height: 520px;
-    }
+		.botton {
+			right: $column_5_1200 + 30;
+		}
+	}
+	// // // // // // // //
+	// // // // // // // //
+	// // // // // // // //
+	// // // // // // // //
+	// Замки высшего класса секретности
+	.top_lock {
+		.img_wrap {
+			width: $column_5_1200;
+			height: 520px;
+		}
 
-    .text_wrap {
-      width: $column_5_1200;
-      height: auto;
-    }
+		.text_wrap {
+			width: $column_5_1200;
+			height: auto;
+		}
 
-    .botton_wrap {
-      padding-left: 50px;
-    }
-  }
-  // // // // // // // //
-  // // // // // // // //
-  // // // // // // // //
-  // // // // // // // //
-  // 13 точек Вашей безопасности
-  .security_points {
-    .content {
-      min-height: 794px;
-    }
+		.botton_wrap {
+			padding-left: 50px;
+		}
+	}
+	// // // // // // // //
+	// // // // // // // //
+	// // // // // // // //
+	// // // // // // // //
+	// 13 точек Вашей безопасности
+	.security_points {
+		.content {
+			min-height: 794px;
+		}
 
-    .text_wrap {
-      width: 100%;
-      margin-right: 0;
+		.text_wrap {
+			width: 100%;
+			margin-right: 0;
 
-      br {
-        display: none;
-      }
+			br {
+				display: none;
+			}
 
-      p {
-        width: $column_6_1200;
-      }
-    }
+			p {
+				width: $column_6_1200;
+			}
+		}
 
-    .advantage_block {
-      display: none;
-    }
+		.advantage_block {
+			display: none;
+		}
 
-    .shadow_botton_wrap {
-      width: auto;
-    }
+		.shadow_botton_wrap {
+			width: auto;
+		}
 
-    .botton_wrap {
-      margin-left: 0;
-      width: $column_7_1200;
-      padding-left: $column_1_1200;
+		.botton_wrap {
+			margin-left: 0;
+			width: $column_7_1200;
+			padding-left: $column_1_1200;
 
-      .vertical_line {
-        display: none;
-      }
+			.vertical_line {
+				display: none;
+			}
 
-      .horizontal_line {
-        left: 100% !important;
-      }
-    }
+			.horizontal_line {
+				left: 100% !important;
+			}
+		}
 
-    .img_wrap {
-      width: 342px;
-      height: 730px;
-    }
-  }
-  // // // // // // // //
-  // // // // // // // //
-  // // // // // // // //
-  // // // // // // // //
-  // БЫСТРО? ОЧЕНЬ БЫСТРО!
-  .very_fast {
-    .text_wrap {
-      width: 100%;
-    }
+		.img_wrap {
+			width: 342px;
+			height: 730px;
+		}
+	}
+	// // // // // // // //
+	// // // // // // // //
+	// // // // // // // //
+	// // // // // // // //
+	// БЫСТРО? ОЧЕНЬ БЫСТРО!
+	.very_fast {
+		.text_wrap {
+			width: 100%;
+		}
 
-    .icons_wrap {
-      width: 100%;
-    }
-  }
-  // // // // // // // //
-  // // // // // // // //
-  // // // // // // // //
-  // // // // // // // //
-  // ДВЕРЬ С БРОНЕПАКЕТОМ
-  .door_armor {
-    .crutch_container1 {
-      margin: -70px 30px -70px 0;
-      width: $column_5_1200;
-    }
+		.icons_wrap {
+			width: 100%;
+		}
+	}
+	// // // // // // // //
+	// // // // // // // //
+	// // // // // // // //
+	// // // // // // // //
+	// ДВЕРЬ С БРОНЕПАКЕТОМ
+	.door_armor {
+		.crutch_container1 {
+			margin: -70px 30px -70px 0;
+			width: $column_5_1200;
+		}
 
-    .img_wrap {
-      width: 717px;
-      height: 1064px;
-    }
+		.img_wrap {
+			width: 717px;
+			height: 1064px;
+		}
 
-    .text_wrap {
-      width: $column_5_1200;
-      right: 0;
-    }
+		.text_wrap {
+			width: $column_5_1200;
+			right: 0;
+		}
 
-    .advantages_wrap {
-      margin: 30px 0;
-      text-align: center;
-    }
+		.advantages_wrap {
+			margin: 30px 0;
+			text-align: center;
+		}
 
-    .advantages {
-      margin-right: 0;
-      margin-bottom: 30px;
-      text-align: left;
+		.advantages {
+			margin-right: 0;
+			margin-bottom: 30px;
+			text-align: left;
 
-      &:last-child {
-        margin-bottom: 0;
-      }
-    }
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
 
-    .botton_wrap {
-      padding-right: 60px;
-      margin: 30px 0;
-    }
-  }
-  // // // // // // // //
-  // // // // // // // //
-  // // // // // // // //
-  // // // // // // // //
-  // Сохраним тепло и уют в Вашем доме
-  .warmth_consiness {
-    .blur {
-      width: calc(#{$column_7_1200 + 50px} + ((100% - #{$column_10_1200}) / 2));
-    }
+		.botton_wrap {
+			padding-right: 60px;
+			margin: 30px 0;
+		}
+	}
+	// // // // // // // //
+	// // // // // // // //
+	// // // // // // // //
+	// // // // // // // //
+	// Сохраним тепло и уют в Вашем доме
+	.warmth_consiness {
+		.blur {
+			width: calc(#{$column_7_1200 + 50px} + ((100% - #{$column_10_1200}) / 2));
+		}
 
-    .content {
-      width: $column_7_1200;
-      padding: 40px 0 40px 40px;
-    }
-  }
-  // // // // // // // //
-  // // // // // // // //
-  // // // // // // // //
-  // // // // // // // //
-  // Гарантия конфиденциальности
-  .confidentiality {
-    .text_wrap {
-      width: $column_7_1200;
-    }
+		.content {
+			width: $column_7_1200;
+			padding: 40px 0 40px 40px;
+		}
+	}
+	// // // // // // // //
+	// // // // // // // //
+	// // // // // // // //
+	// // // // // // // //
+	// Гарантия конфиденциальности
+	.confidentiality {
+		.text_wrap {
+			width: $column_7_1200;
+		}
 
-    .tubus {
-      width: 310px;
-      margin-right: -20px;
-      margin-left: -20px;
-    }
-  }
-  // // // // // // // //
-  // // // // // // // //
-  // // // // // // // //
-  // // // // // // // //
-  // Выше облаков: 40 лет качества
-  .years_quality {
-    .blur {
-      width: calc(#{$column_7_1200 + 50px} + ((100% - #{$column_10_1200}) / 2));
-    }
+		.tubus {
+			width: 310px;
+			margin-right: -20px;
+			margin-left: -20px;
+		}
+	}
+	// // // // // // // //
+	// // // // // // // //
+	// // // // // // // //
+	// // // // // // // //
+	// Выше облаков: 40 лет качества
+	.years_quality {
+		.blur {
+			width: calc(#{$column_7_1200 + 50px} + ((100% - #{$column_10_1200}) / 2));
+		}
 
-    .content {
-      width: $column_7_1200;
-      padding: 40px 0 40px 40px;
-    }
+		.content {
+			width: $column_7_1200;
+			padding: 40px 0 40px 40px;
+		}
 
-    .botton,
-    .botton_ghost {
-      min-width: auto;
-    }
-  }
-  // // // // // // // //
-  // // // // // // // //
-  // // // // // // // //
-  // // // // // // // //
-  // Почему дверь «СТАНДАРТ» - это правильный выбор?
-  .rught_choice {
-    .blur {
-      width: calc(#{$column_10_1200} + ((100% - #{$column_10_1200}) / 2));
+		.botton,
+		.botton_ghost {
+			min-width: auto;
+		}
+	}
+	// // // // // // // //
+	// // // // // // // //
+	// // // // // // // //
+	// // // // // // // //
+	// Почему дверь «СТАНДАРТ» - это правильный выбор?
+	.rught_choice {
+		.blur {
+			width: calc(#{$column_10_1200} + ((100% - #{$column_10_1200}) / 2));
 
-      &::after {
-        right: calc(0px - (100vw - #{$column_10_1200}) / 2);
-      }
-    }
+			&::after {
+				right: calc(0px - (100vw - #{$column_10_1200}) / 2);
+			}
+		}
 
-    .content {
-      width: $column_10_1200;
-      padding: 40px 40px 40px 0;
-    }
+		.content {
+			width: $column_10_1200;
+			padding: 40px 40px 40px 0;
+		}
 
-    .text_wrap {
-      width: $column_6_1200;
-    }
+		.text_wrap {
+			width: $column_6_1200;
+		}
 
-    .botton,
-    .botton_ghost {
-      min-width: auto;
-    }
+		.botton,
+		.botton_ghost {
+			min-width: auto;
+		}
 
-    .choice_img_dor {
-      top: 70px;
-      right: calc((100% - #{$column_10_1200}) / 2);
-      width: 340px;
-    }
-  }
-  // // // // // // // //
-  // // // // // // // //
-  // // // // // // // //
-  // // // // // // // //
-  // В Санкт-Петербурге 20 магазинов Эльбор
-  .map_mimicry {
-    .comtent {
-      background-position-x: 30%;
-    }
+		.choice_img_dor {
+			top: 70px;
+			right: calc((100% - #{$column_10_1200}) / 2);
+			width: 340px;
+		}
+	}
+	// // // // // // // //
+	// // // // // // // //
+	// // // // // // // //
+	// // // // // // // //
+	// В Санкт-Петербурге 20 магазинов Эльбор
+	.map_mimicry {
+		.comtent {
+			background-position-x: 30%;
+		}
 
-    .crutch_container1 {
-      width: $column_10_1200;
-    }
+		.crutch_container1 {
+			width: $column_10_1200;
+		}
 
-    .text_wrap {
-      margin-left: #{$column_2_1200 + 30};
-      padding-left: #{$column_2_1200 + 30};
-    }
-  }
+		.text_wrap {
+			margin-left: #{$column_2_1200 + 30};
+			padding-left: #{$column_2_1200 + 30};
+		}
+	}
 }
 // // // // // // // // // // // // // // // //
 // // // // // // // // // // // // // // // //
 // // // // // // // // // // // // // // // //
 // // // // // // // // // // // // // // // //
 @media screen and (max-width: 960px) {
-  // // // // // // // //
-  // Остальное
-  .content {
-    width: $column_8_716;
-  }
+	// // // // // // // //
+	// Остальное
+	.content {
+		width: $column_8_716;
+	}
 
-  .years_quality .botton_wrap,
-  .rught_choice .botton_wrap,
-  .affordable_security .botton_wrap {
-    flex-direction: column;
-    align-items: flex-start;
+	.years_quality .botton_wrap,
+	.rught_choice .botton_wrap,
+	.affordable_security .botton_wrap {
+		flex-direction: column;
+		align-items: flex-start;
 
-    a {
-      margin-bottom: 20px;
-      flex-basis: auto;
-      margin-right: 0;
+		a {
+			margin-bottom: 20px;
+			flex-basis: auto;
+			margin-right: 0;
 
-      &:last-child {
-        margin-bottom: 0;
-      }
-    }
-  }
-  // // // // // // // //
-  // // // // // // // //
-  // Формы
-  .form .wrap_input {
-    input {
-      width: $column_4_716;
-    }
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
+	// // // // // // // //
+	// // // // // // // //
+	// Формы
+	.form .wrap_input {
+		input {
+			width: $column_4_716;
+		}
 
-    label {
-      margin-right: 15px;
-    }
-  }
-  // // // // // // // //
-  // // // // // // // //
-  // // // // // // // //
-  // // // // // // // //
-  // Доступная безопасность
-  .affordable_security {
-    min-height: auto;
-    padding: 70px 0;
+		label {
+			margin-right: 15px;
+		}
+	}
+	// // // // // // // //
+	// // // // // // // //
+	// // // // // // // //
+	// // // // // // // //
+	// Доступная безопасность
+	.affordable_security {
+		min-height: auto;
+		padding: 70px 0;
 
-    .main_img_dor {
-      height: 627px;
-      top: calc(50% - 627px / 2 + 7px);
-      left: calc(((100% - #{$column_8_716}) / 2) - 4px);
-    }
+		.main_img_dor {
+			height: 627px;
+			top: calc(50% - 627px / 2 + 7px);
+			left: calc(((100% - #{$column_8_716}) / 2) - 4px);
+		}
 
-    .blur {
-      width: calc(#{$column_6_716 + 60} + ((100% - #{$column_8_716}) / 2));
+		.blur {
+			width: calc(#{$column_6_716 + 60} + ((100% - #{$column_8_716}) / 2));
 
-      &::after {
-        left: calc(0px - (100vw - #{$column_8_716}) / 2);
-        top: -70px;
-      }
-    }
+			&::after {
+				left: calc(0px - (100vw - #{$column_8_716}) / 2);
+				top: -70px;
+			}
+		}
 
-    .content {
-      padding: 40px 0 40px #{$column_1_716 + 90};
-      width: #{$column_6_716 + 60};
-    }
+		.content {
+			padding: 40px 0 40px #{$column_1_716 + 90};
+			width: #{$column_6_716 + 60};
+		}
 
-    .icons {
-      img {
-        height: 80px;
-      }
-    }
-  }
-  // // // // // // // //
-  // // // // // // // //
-  // // // // // // // //
-  // // // // // // // //
-  // Основательно, Прочно, Надежно
-  .door_advantages {
-    padding: 70px 0;
+		.icons {
+			img {
+				height: 80px;
+			}
+		}
+	}
+	// // // // // // // //
+	// // // // // // // //
+	// // // // // // // //
+	// // // // // // // //
+	// Основательно, Прочно, Надежно
+	.door_advantages {
+		padding: 70px 0;
 
-    .text_wrap {
-      width: $column_8_716;
-      margin-right: 0;
-      margin-bottom: 40px;
+		.text_wrap {
+			width: $column_8_716;
+			margin-right: 0;
+			margin-bottom: 40px;
 
-      p {
-        width: $column_5_716 - 30;
-      }
-    }
+			p {
+				width: $column_5_716 - 30;
+			}
+		}
 
-    .botton_wrap {
-      margin: 0 $column_4_716 0 0;
-    }
+		.botton_wrap {
+			margin: 0 $column_4_716 0 0;
+		}
 
-    .img_wrap {
-      width: 271px;
-      height: 679px;
-      bottom: 28px;
-      right: -4px;
-      top: auto;
-    }
+		.img_wrap {
+			width: 271px;
+			height: 679px;
+			bottom: 28px;
+			right: -4px;
+			top: auto;
+		}
 
-    .botton {
-      position: static;
-      margin: 40px auto 0;
-    }
-  }
-  // // // // // // // //
-  // // // // // // // //
-  // // // // // // // //
-  // // // // // // // //
-  // Замки высшего класса секретности
-  .top_lock {
-    .img_wrap {
-      display: none;
-    }
+		.botton {
+			position: static;
+			margin: 40px auto 0;
+		}
+	}
+	// // // // // // // //
+	// // // // // // // //
+	// // // // // // // //
+	// // // // // // // //
+	// Замки высшего класса секретности
+	.top_lock {
+		.img_wrap {
+			display: none;
+		}
 
-    .botton_wrap {
-      display: none;
-    }
+		.botton_wrap {
+			display: none;
+		}
 
-    .text_wrap {
-      width: $column_8_716;
-      display: flex;
-      flex-direction: column;
+		.text_wrap {
+			width: $column_8_716;
+			display: flex;
+			flex-direction: column;
 
-      h2 {
-        text-align: center;
-        margin-bottom: 20px;
-      }
-    }
+			h2 {
+				text-align: center;
+				margin-bottom: 20px;
+			}
+		}
 
-    .icon_text {
-      width: $column_6_716;
-      margin: 0 auto 30px;
-    }
+		.icon_text {
+			width: $column_6_716;
+			margin: 0 auto 30px;
+		}
 
-    .lock_static_wrap {
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 40px;
-    }
+		.lock_static_wrap {
+			display: flex;
+			justify-content: space-between;
+			margin-bottom: 40px;
+		}
 
-    .lock_static {
-      width: $column_4_716;
-      text-align: center;
+		.lock_static {
+			width: $column_4_716;
+			text-align: center;
 
-      &:last-child {
-        margin-right: 0;
-      }
+			&:last-child {
+				margin-right: 0;
+			}
 
-      img {
-        height: 394px;
-        margin-bottom: 10px;
-      }
+			img {
+				height: 394px;
+				margin-bottom: 10px;
+			}
 
-      .shadow_botton {
-        background-color: rgba(0, 0, 0, 0);
-        font-family: $font_h;
-        font-weight: 500;
-        font-size: 38px;
-        line-height: 46px;
-        text-align: center;
-        display: inline-flex;
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 0;
-        cursor: auto;
+			.shadow_botton {
+				background-color: rgba(0, 0, 0, 0);
+				font-family: $font_h;
+				font-weight: 500;
+				font-size: 38px;
+				line-height: 46px;
+				text-align: center;
+				display: inline-flex;
+				flex-direction: column;
+				align-items: flex-start;
+				padding: 0;
+				cursor: auto;
 
-        &:hover {
-          box-shadow: none;
-        }
+				&:hover {
+					box-shadow: none;
+				}
 
-        span {
-          font-style: italic;
-          font-weight: normal;
-          font-size: 16px;
-          line-height: 24px;
-        }
-      }
-    }
+				span {
+					font-style: italic;
+					font-weight: normal;
+					font-size: 16px;
+					line-height: 24px;
+				}
+			}
+		}
 
-    .botton {
-      margin: 0 auto;
-    }
-  }
-  // // // // // // // //
-  // // // // // // // //
-  // // // // // // // //
-  // // // // // // // //
-  // 13 точек Вашей безопасности
-  .security_points {
-    .text_wrap {
-      p {
-        width: $column_5_716;
-      }
+		.botton {
+			margin: 0 auto;
+		}
+	}
+	// // // // // // // //
+	// // // // // // // //
+	// // // // // // // //
+	// // // // // // // //
+	// 13 точек Вашей безопасности
+	.security_points {
+		.text_wrap {
+			p {
+				width: $column_5_716;
+			}
 
-      .accented {
-        margin-top: 30px;
-      }
-    }
+			.accented {
+				margin-top: 30px;
+			}
+		}
 
-    .botton_wrap {
-      width: $column_5_716;
-      padding-left: 0;
-      margin: 0 $column_3_716 0 0;
-    }
+		.botton_wrap {
+			width: $column_5_716;
+			padding-left: 0;
+			margin: 0 $column_3_716 0 0;
+		}
 
-    .img_wrap {
-      width: 260px;
-      height: 556px;
-      bottom: 100px;
-    }
+		.img_wrap {
+			width: 260px;
+			height: 556px;
+			bottom: 100px;
+		}
 
-    .botton {
-      position: static;
-      margin: 50px auto 0;
-    }
-  }
-  // // // // // // // //
-  // // // // // // // //
-  // // // // // // // //
-  // // // // // // // //
-  // ДВЕРЬ С БРОНЕПАКЕТОМ
-  .door_armor {
-    .crutch_container1 {
-      width: $column_3_716;
-    }
+		.botton {
+			position: static;
+			margin: 50px auto 0;
+		}
+	}
+	// // // // // // // //
+	// // // // // // // //
+	// // // // // // // //
+	// // // // // // // //
+	// ДВЕРЬ С БРОНЕПАКЕТОМ
+	.door_armor {
+		.crutch_container1 {
+			width: $column_3_716;
+		}
 
-    .text_wrap {
-      width: $column_5_716;
-    }
-  }
-  // // // // // // // //
-  // // // // // // // //
-  // // // // // // // //
-  // // // // // // // //
-  // Сохраним тепло и уют в Вашем доме
-  .warmth_consiness {
-    background-position-x: 20%;
+		.text_wrap {
+			width: $column_5_716;
+		}
+	}
+	// // // // // // // //
+	// // // // // // // //
+	// // // // // // // //
+	// // // // // // // //
+	// Сохраним тепло и уют в Вашем доме
+	.warmth_consiness {
+		background-position-x: 20%;
 
-    .blur {
-      width: calc(#{$column_5_716 + 50px} + ((100% - #{$column_8_716}) / 2));
+		.blur {
+			width: calc(#{$column_5_716 + 50px} + ((100% - #{$column_8_716}) / 2));
 
-      &::after {
-        background-position-x: 20%;
-        left: calc(0px - (100vw - #{$column_3_716}) / 2);
-      }
-    }
+			&::after {
+				background-position-x: 20%;
+				left: calc(0px - (100vw - #{$column_3_716}) / 2);
+			}
+		}
 
-    .content {
-      width: $column_5_716 + 20;
-    }
-  }
-  // // // // // // // //
-  // // // // // // // //
-  // // // // // // // //
-  // // // // // // // //
-  // Гарантия конфиденциальности
-  .confidentiality {
-    .text_wrap {
-      width: $column_5_716;
+		.content {
+			width: $column_5_716 + 20;
+		}
+	}
+	// // // // // // // //
+	// // // // // // // //
+	// // // // // // // //
+	// // // // // // // //
+	// Гарантия конфиденциальности
+	.confidentiality {
+		.text_wrap {
+			width: $column_5_716;
 
-      h2 {
-        width: $column_8_716;
-      }
-    }
+			h2 {
+				width: $column_8_716;
+			}
+		}
 
-    .tubus {
-      width: 263px;
-      align-self: flex-end;
-      margin: 0 0 -100px -20px;
-    }
-  }
-  // // // // // // // //
-  // // // // // // // //
-  // // // // // // // //
-  // // // // // // // //
-  // Выше облаков: 40 лет качества
-  .years_quality {
-    .blur {
-      width: calc(#{$column_5_716 + 50} + ((100% - #{$column_8_716}) / 2));
+		.tubus {
+			width: 263px;
+			align-self: flex-end;
+			margin: 0 0 -100px -20px;
+		}
+	}
+	// // // // // // // //
+	// // // // // // // //
+	// // // // // // // //
+	// // // // // // // //
+	// Выше облаков: 40 лет качества
+	.years_quality {
+		.blur {
+			width: calc(#{$column_5_716 + 50} + ((100% - #{$column_8_716}) / 2));
 
-      &::after {
-        left: calc(0px - (100vw - #{$column_3_716}) / 2);
-      }
-    }
+			&::after {
+				left: calc(0px - (100vw - #{$column_3_716}) / 2);
+			}
+		}
 
-    .content {
-      width: $column_5_716 + 20;
-    }
-  }
-  // // // // // // // //
-  // // // // // // // //
-  // // // // // // // //
-  // // // // // // // //
-  // Почему дверь «СТАНДАРТ» - это правильный выбор?
-  .rught_choice {
-    .blur {
-      width: calc(#{$column_8_716} + ((100% - #{$column_8_716}) / 2));
+		.content {
+			width: $column_5_716 + 20;
+		}
+	}
+	// // // // // // // //
+	// // // // // // // //
+	// // // // // // // //
+	// // // // // // // //
+	// Почему дверь «СТАНДАРТ» - это правильный выбор?
+	.rught_choice {
+		.blur {
+			width: calc(#{$column_8_716} + ((100% - #{$column_8_716}) / 2));
 
-      &::after {
-        right: calc(0px - (100vw - #{$column_8_716}) / 2);
-      }
-    }
+			&::after {
+				right: calc(0px - (100vw - #{$column_8_716}) / 2);
+			}
+		}
 
-    .content {
-      width: $column_8_716;
-    }
+		.content {
+			width: $column_8_716;
+		}
 
-    .text_wrap {
-      width: $column_5_716 - 10;
+		.text_wrap {
+			width: $column_5_716 - 10;
 
-      h2 {
-        width: $column_8_716 - 30;
-        letter-spacing: -0.02em;
-      }
-    }
+			h2 {
+				width: $column_8_716 - 30;
+				letter-spacing: -0.02em;
+			}
+		}
 
-    .accented_line {
-      width: 100%;
-    }
+		.accented_line {
+			width: 100%;
+		}
 
-    .choice_img_dor {
-      top: 220px;
-      right: calc((100% - #{$column_8_716}) / 2);
-      width: 261px;
-    }
-  }
-  // // // // // // // //
-  // // // // // // // //
-  // // // // // // // //
-  // // // // // // // //
-  // В Санкт-Петербурге 20 магазинов Эльбор
-  .map_mimicry {
-    .crutch_container1 {
-      width: $column_8_716;
-    }
+		.choice_img_dor {
+			top: 220px;
+			right: calc((100% - #{$column_8_716}) / 2);
+			width: 261px;
+		}
+	}
+	// // // // // // // //
+	// // // // // // // //
+	// // // // // // // //
+	// // // // // // // //
+	// В Санкт-Петербурге 20 магазинов Эльбор
+	.map_mimicry {
+		.crutch_container1 {
+			width: $column_8_716;
+		}
 
-    .text_wrap {
-      margin-left: #{$column_1_716 + 20};
-      padding-left: 130px;
-      text-align: right;
-      align-items: flex-end;
-    }
-  }
+		.text_wrap {
+			margin-left: #{$column_1_716 + 20};
+			padding-left: 130px;
+			text-align: right;
+			align-items: flex-end;
+		}
+	}
 }
 // // // // // // // // // // // // // // // //
 // // // // // // // // // // // // // // // //
 // // // // // // // // // // // // // // // //
 // // // // // // // // // // // // // // // //
 @media screen and (max-width: 716px) {
-  // // // // // // // //
-  // Текст
-  h1,
-  .h1_mimicry {
-    margin: 0;
-    font-size: 32px;
-    line-height: 42px;
+	// // // // // // // //
+	// Текст
+	h1,
+	.h1_mimicry {
+		margin: 0;
+		font-size: 32px;
+		line-height: 42px;
 
-    &:first-child {
-      margin-top: -8px;
-    }
-  }
+		&:first-child {
+			margin-top: -8px;
+		}
+	}
 
-  // // // // // // // //
-  // Остальное
-  .top_lock,
-  .security_points,
-  .very_fast,
-  .door_armor,
-  .warmth_consiness,
-  .confidentiality,
-  .years_quality,
-  .gauge,
-  .rught_choice,
-  .affordable_security,
-  .map_mimicry,
-  .door_advantages {
-    padding: 0;
+	// // // // // // // //
+	// Остальное
+	.top_lock,
+	.security_points,
+	.very_fast,
+	.door_armor,
+	.warmth_consiness,
+	.confidentiality,
+	.years_quality,
+	.gauge,
+	.rught_choice,
+	.affordable_security,
+	.map_mimicry,
+	.door_advantages {
+		padding: 0;
 
-    h1,
-    h2,
-    h3,
-    p {
-      width: 100%;
-      text-align: left;
+		h1,
+		h2,
+		h3,
+		p {
+			width: 100%;
+			text-align: left;
 
-      br {
-        display: none;
-      }
-    }
+			br {
+				display: none;
+			}
+		}
 
-    .content {
-      width: 100%;
-      padding: 50px 20px;
-      margin: 0;
-      min-height: auto;
-    }
+		.content {
+			width: 100%;
+			padding: 50px 20px;
+			margin: 0;
+			min-height: auto;
+		}
 
-    .text_wrap {
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-  }
-  .affordable_security,
-  .warmth_consiness,
-  .years_quality,
-  .rught_choice {
-    .blur {
-      width: 100%;
-      background-color: rgba(0, 0, 0, 0);
-      &::after {
-        display: none;
-      }
-    }
-  }
+		.text_wrap {
+			width: 100%;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+		}
+	}
+	.affordable_security,
+	.warmth_consiness,
+	.years_quality,
+	.rught_choice {
+		.blur {
+			width: 100%;
+			background-color: rgba(0, 0, 0, 0);
+			&::after {
+				display: none;
+			}
+		}
+	}
 
-  .main_dor_mobile {
-    display: block;
-    margin: 0 -20px;
-    padding: 30px 0;
-    width: calc(100% + 40px);
-    position: relative;
-    text-align: center;
+	.main_dor_mobile {
+		display: block;
+		margin: 0 -20px;
+		padding: 30px 0;
+		width: calc(100% + 40px);
+		position: relative;
+		text-align: center;
 
-    &::after {
-      content: "";
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      display: block;
-      background: $blur_bac_1 no-repeat 20% center;
-      background-size: cover;
-      mask-image: linear-gradient(
-        180deg,
-        rgba(0, 0, 0, 0) 0%,
-        rgba(0, 0, 0, 1) 10%,
-        rgba(0, 0, 0, 1) 90%,
-        rgba(0, 0, 0, 0) 100%
-      );
-      z-index: 1;
-    }
+		&::after {
+			content: "";
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			display: block;
+			background: $blur_bac_1 no-repeat 20% center;
+			background-size: cover;
+			mask-image: linear-gradient(
+				180deg,
+				rgba(0, 0, 0, 0) 0%,
+				rgba(0, 0, 0, 1) 10%,
+				rgba(0, 0, 0, 1) 90%,
+				rgba(0, 0, 0, 0) 100%
+			);
+			z-index: 1;
+		}
 
-    img {
-      position: relative;
-      height: 627px;
-      z-index: 2;
-    }
-  }
-  // // // // // // // //
-  // // // // // // // //
-  // Сдайдер
-  body {
-    .swiper-container {
-      display: block;
-      margin: 0 -20px;
-    }
+		img {
+			position: relative;
+			height: 627px;
+			z-index: 2;
+		}
+	}
+	// // // // // // // //
+	// // // // // // // //
+	// Сдайдер
+	body {
+		.swiper-container {
+			display: block;
+			margin: 0 -20px;
+		}
 
-    .swiper-slide {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+		.swiper-slide {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
 
-      .shadow_botton {
-        margin-top: 30px;
-        padding: 0;
-      }
-    }
+			.shadow_botton {
+				margin-top: 30px;
+				padding: 0;
+			}
+		}
 
-    .img_wrap_slider {
-      height: 434px;
-      overflow: hidden;
+		.img_wrap_slider {
+			height: 434px;
+			overflow: hidden;
 
-      img {
-        height: 617px;
-      }
-    }
-  }
-  // // // // // // // //
-  // // // // // // // //
-  // Формы
-  .form {
-    width: 100%;
-    text-align: left;
+			img {
+				height: 617px;
+			}
+		}
+	}
+	// // // // // // // //
+	// // // // // // // //
+	// Формы
+	.form {
+		width: 100%;
+		text-align: left;
 
-    .wrap_input {
-      margin: 10px 0;
+		.wrap_input {
+			margin: 10px 0;
 
-      label {
-        margin: 25px 0;
-        width: 100%;
-      }
+			label {
+				margin: 25px 0;
+				width: 100%;
+			}
 
-      input {
-        width: 100%;
-      }
-    }
-  }
-  // // // // // // // //
-  // // // // // // // //
-  // // // // // // // //
-  // // // // // // // //
-  // Доступная безопасность
-  .affordable_security {
-    background: $gradien_back_w;
+			input {
+				width: 100%;
+			}
+		}
+	}
+	// // // // // // // //
+	// // // // // // // //
+	// // // // // // // //
+	// // // // // // // //
+	// Доступная безопасность
+	.affordable_security {
+		background: $gradien_back_w;
 
-    .main_img_dor {
-      display: none;
-    }
+		.main_img_dor {
+			display: none;
+		}
 
-    .icons {
-      justify-content: space-around;
-      flex-wrap: wrap;
-      margin: 40px 0 0;
+		.icons {
+			justify-content: space-around;
+			flex-wrap: wrap;
+			margin: 40px 0 0;
 
-      img {
-        height: 100px;
-        margin-bottom: 40px;
-      }
-    }
+			img {
+				height: 100px;
+				margin-bottom: 40px;
+			}
+		}
 
-    .main_dor_mobile {
-      img {
-        height: 627px;
-      }
-    }
+		.main_dor_mobile {
+			img {
+				height: 627px;
+			}
+		}
 
-    .prise {
-      width: 100%;
-      text-align: center;
+		.prise {
+			width: 100%;
+			text-align: center;
 
-      p {
-        text-align: center;
-      }
+			p {
+				text-align: center;
+			}
 
-      .old {
-        width: auto;
-      }
+			.old {
+				width: auto;
+			}
 
-      .new {
-        margin: 0 0 20px 0;
-      }
-    }
+			.new {
+				margin: 0 0 20px 0;
+			}
+		}
 
-    .botton_wrap {
-      align-items: center;
-    }
-  }
-  // // // // // // // //
-  // // // // // // // //
-  // // // // // // // //
-  // // // // // // // //
-  // Основательно, Прочно, Надежно
-  .door_advantages {
-    .text_wrap {
-      width: 100%;
+		.botton_wrap {
+			align-items: center;
+		}
+	}
+	// // // // // // // //
+	// // // // // // // //
+	// // // // // // // //
+	// // // // // // // //
+	// Основательно, Прочно, Надежно
+	.door_advantages {
+		.text_wrap {
+			width: 100%;
 
-      p {
-        margin-right: 0;
-        width: 100%;
-      }
-    }
+			p {
+				margin-right: 0;
+				width: 100%;
+			}
+		}
 
-    .img_wrap_slider {
-      height: 434px;
-      overflow: hidden;
+		.img_wrap_slider {
+			height: 434px;
+			overflow: hidden;
 
-      img {
-        height: 617px;
-      }
-    }
+			img {
+				height: 617px;
+			}
+		}
 
-    .botton_wrap,
-    .img_wrap {
-      display: none;
-    }
-  }
-  // // // // // // // //
-  // // // // // // // //
-  // // // // // // // //
-  // // // // // // // //
-  // Замки высшего класса секретности
-  .top_lock {
-    .icon_text {
-      width: 100%;
+		.botton_wrap,
+		.img_wrap {
+			display: none;
+		}
+	}
+	// // // // // // // //
+	// // // // // // // //
+	// // // // // // // //
+	// // // // // // // //
+	// Замки высшего класса секретности
+	.top_lock {
+		.icon_text {
+			width: 100%;
 
-      img {
-        flex-basis: auto;
-      }
-    }
+			img {
+				flex-basis: auto;
+			}
+		}
 
-    .lock_static_wrap {
-      flex-direction: column;
-      align-items: center;
-    }
-  }
-  // // // // // // // //
-  // // // // // // // //
-  // // // // // // // //
-  // // // // // // // //
-  // 13 точек Вашей безопасности
-  .security_points {
-    .botton_wrap,
-    .img_wrap {
-      display: none;
-    }
+		.lock_static_wrap {
+			flex-direction: column;
+			align-items: center;
+		}
+	}
+	// // // // // // // //
+	// // // // // // // //
+	// // // // // // // //
+	// // // // // // // //
+	// 13 точек Вашей безопасности
+	.security_points {
+		.botton_wrap,
+		.img_wrap {
+			display: none;
+		}
 
-    .text_wrap p {
-      width: 100%;
-    }
+		.text_wrap p {
+			width: 100%;
+		}
 
-    .img_wrap_slider {
-      width: 235px;
-      height: 502px;
-      background: url("img/dorToch000.png") no-repeat center;
-      background-size: cover;
+		.img_wrap_slider {
+			width: 235px;
+			height: 502px;
+			background: url("img/dorToch000.png") no-repeat center;
+			background-size: cover;
 
-      img {
-        height: inherit;
-      }
-    }
+			img {
+				height: inherit;
+			}
+		}
 
-    .botton {
-      margin-top: 40px;
-    }
-  }
-  // // // // // // // //
-  // // // // // // // //
-  // // // // // // // //
-  // // // // // // // //
-  // БЫСТРО? ОЧЕНЬ БЫСТРО!
-  .very_fast {
-    .icons_wrap {
-      flex-direction: column;
-      align-items: center;
+		.botton {
+			margin-top: 40px;
+		}
+	}
+	// // // // // // // //
+	// // // // // // // //
+	// // // // // // // //
+	// // // // // // // //
+	// БЫСТРО? ОЧЕНЬ БЫСТРО!
+	.very_fast {
+		.icons_wrap {
+			flex-direction: column;
+			align-items: center;
 
-      .arrow {
-        margin: 60px 0;
-        transform: rotate(90deg);
-      }
-    }
-  }
-  // // // // // // // //
-  // // // // // // // //
-  // // // // // // // //
-  // // // // // // // //
-  // ДВЕРЬ С БРОНЕПАКЕТОМ
-  .door_armor {
-    background: $gradien_back_w;
+			.arrow {
+				margin: 60px 0;
+				transform: rotate(90deg);
+			}
+		}
+	}
+	// // // // // // // //
+	// // // // // // // //
+	// // // // // // // //
+	// // // // // // // //
+	// ДВЕРЬ С БРОНЕПАКЕТОМ
+	.door_armor {
+		background: $gradien_back_w;
 
-    .crutch_container1 {
-      display: none;
-    }
+		.crutch_container1 {
+			display: none;
+		}
 
-    .botton_wrap {
-      padding: 0;
-      margin: 0 0 40px 0;
+		.botton_wrap {
+			padding: 0;
+			margin: 0 0 40px 0;
 
-      .shadow_botton {
-        box-shadow: none;
-        cursor: auto;
-        &:hover,
-        &:focus {
-          box-shadow: none;
-        }
-      }
+			.shadow_botton {
+				box-shadow: none;
+				cursor: auto;
+				&:hover,
+				&:focus {
+					box-shadow: none;
+				}
+			}
 
-      .horizontal_line {
-        display: none;
-      }
-    }
+			.horizontal_line {
+				display: none;
+			}
+		}
 
-    .advantages_wrap,
-    .botton_wrap {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-  }
-  // // // // // // // //
-  // // // // // // // //
-  // // // // // // // //
-  // // // // // // // //
-  // Сохраним тепло и уют в Вашем доме
-  .warmth_consiness {
-    background-position-x: 0;
-    background-size: auto 400px;
+		.advantages_wrap,
+		.botton_wrap {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+		}
+	}
+	// // // // // // // //
+	// // // // // // // //
+	// // // // // // // //
+	// // // // // // // //
+	// Сохраним тепло и уют в Вашем доме
+	.warmth_consiness {
+		background-position-x: 0;
+		background-size: auto 400px;
 
-    .content {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
+		.content {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+		}
 
-    .botton {
-      margin-top: 250px;
-    }
-  }
-  // // // // // // // //
-  // // // // // // // //
-  // // // // // // // //
-  // // // // // // // //
-  // Гарантия конфиденциальности
-  .confidentiality {
-    .content {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
+		.botton {
+			margin-top: 250px;
+		}
+	}
+	// // // // // // // //
+	// // // // // // // //
+	// // // // // // // //
+	// // // // // // // //
+	// Гарантия конфиденциальности
+	.confidentiality {
+		.content {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+		}
 
-    .text_wrap h2 {
-      width: 100%;
-    }
+		.text_wrap h2 {
+			width: 100%;
+		}
 
-    .tubus {
-      margin: 28px 0 0;
-      align-self: auto;
-    }
+		.tubus {
+			margin: 28px 0 0;
+			align-self: auto;
+		}
 
-    .botton {
-      margin-top: 30px;
-    }
-  }
-  // // // // // // // //
-  // // // // // // // //
-  // // // // // // // //
-  // // // // // // // //
-  // Выше облаков: 40 лет качества
-  .years_quality {
-    background: $fon_color_w;
+		.botton {
+			margin-top: 30px;
+		}
+	}
+	// // // // // // // //
+	// // // // // // // //
+	// // // // // // // //
+	// // // // // // // //
+	// Выше облаков: 40 лет качества
+	.years_quality {
+		background: $fon_color_w;
 
-    &::after {
-      content: "";
-      height: 500px;
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      background: $blur_bac_3 no-repeat 20% center;
-      background-size: cover;
-      mask-image: linear-gradient(
-        180deg,
-        rgba(0, 0, 0, 0) 0%,
-        rgba(0, 0, 0, 1) 30%,
-        rgba(0, 0, 0, 1) 100%
-      );
-    }
+		&::after {
+			content: "";
+			height: 500px;
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			background: $blur_bac_3 no-repeat 20% center;
+			background-size: cover;
+			mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 30%, rgba(0, 0, 0, 1) 100%);
+		}
 
-    .botton_wrap {
-      margin-top: 300px;
-      align-items: center;
-    }
+		.botton_wrap {
+			margin-top: 300px;
+			align-items: center;
+		}
 
-    .botton_ghost {
-      @include back_button_ghost;
-    }
-  }
-  // // // // // // // //
-  // // // // // // // //
-  // // // // // // // //
-  // // // // // // // //
-  // Почему дверь «СТАНДАРТ» - это правильный выбор?
-  .rught_choice {
-    &::before {
-      content: none;
-    }
+		.botton_ghost {
+			@include back_button_ghost;
+		}
+	}
+	// // // // // // // //
+	// // // // // // // //
+	// // // // // // // //
+	// // // // // // // //
+	// Почему дверь «СТАНДАРТ» - это правильный выбор?
+	.rught_choice {
+		&::before {
+			content: none;
+		}
 
-    .text_wrap {
-      h2 {
-        width: auto;
-      }
-    }
+		.text_wrap {
+			h2 {
+				width: auto;
+			}
+		}
 
-    .choice_img_dor {
-      display: none;
-    }
+		.choice_img_dor {
+			display: none;
+		}
 
-    .main_dor_mobile {
-      margin-bottom: -50px;
-      padding-bottom: 46px;
-      z-index: 1;
+		.main_dor_mobile {
+			margin-bottom: -50px;
+			padding-bottom: 46px;
+			z-index: 1;
 
-      &::after {
-        mask-image: linear-gradient(
-          180deg,
-          rgba(0, 0, 0, 0) 0%,
-          rgba(0, 0, 0, 1) 20%,
-          rgba(0, 0, 0, 1) 100%
-        );
-      }
+			&::after {
+				mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 20%, rgba(0, 0, 0, 1) 100%);
+			}
 
-      img {
-        height: 500px;
-      }
-    }
+			img {
+				height: 500px;
+			}
+		}
 
-    .botton_wrap {
-      margin-top: -120px;
-      align-items: center;
-      z-index: 2;
-    }
+		.botton_wrap {
+			margin-top: -120px;
+			align-items: center;
+			z-index: 2;
+		}
 
-    .botton_ghost {
-      @include back_button_ghost;
-    }
-  }
-  // // // // // // // //
-  // // // // // // // //
-  // // // // // // // //
-  // // // // // // // //
-  // В Санкт-Петербурге 20 магазинов Эльбор
-  .map_mimicry {
-    .comtent {
-      width: 100%;
-      padding: 0 0 360px;
-      min-height: auto;
-      background-position: 25% 80px;
-    }
+		.botton_ghost {
+			@include back_button_ghost;
+		}
+	}
+	// // // // // // // //
+	// // // // // // // //
+	// // // // // // // //
+	// // // // // // // //
+	// В Санкт-Петербурге 20 магазинов Эльбор
+	.map_mimicry {
+		.comtent {
+			width: 100%;
+			padding: 0 0 360px;
+			min-height: auto;
+			background-position: 25% 80px;
+		}
 
-    .text_wrap {
-      margin: 0;
-      padding: 50px 0 40px;
-      clip-path: none;
-    }
+		.text_wrap {
+			margin: 0;
+			padding: 50px 0 40px;
+			clip-path: none;
+		}
 
-    .h1_mimicry {
-      text-align: center;
+		.h1_mimicry {
+			text-align: center;
 
-      .line_break,
-      br {
-        display: block;
-      }
-    }
+			.line_break,
+			br {
+				display: block;
+			}
+		}
 
-    .crutch_container1 {
-      width: 100%;
-      height: auto;
-    }
+		.crutch_container1 {
+			width: 100%;
+			height: auto;
+		}
 
-    .botton {
-      margin-top: 20px;
-    }
-  }
+		.botton {
+			margin-top: 20px;
+		}
+	}
 }
