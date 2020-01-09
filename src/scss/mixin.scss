@@ -1,0 +1,70 @@
+// Текст
+@mixin h1 {
+  font-family: $font_h;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 48px;
+  line-height: 68px;
+  text-transform: uppercase;
+}
+
+@mixin h2 {
+  font-family: $font_h;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 28px;
+  line-height: 35px;
+}
+
+@mixin p {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+@mixin p_l {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 22px;
+}
+
+// Эфекты
+@mixin shadow_hover {
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+@mixin shadow_active {
+  box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.35);
+}
+
+@mixin back_button_ghost {
+  position: relative;
+
+  &::after {
+    content: "";
+    background-color: rgba(255, 255, 255, 0.8);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+  }
+}
+
+// Группа кнопок
+@mixin botton_wrap {
+  width: 100%;
+  display: flex;
+
+  a {
+    margin-right: 30px;
+    flex-grow: 1;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
