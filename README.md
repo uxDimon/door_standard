@@ -1,6 +1,4 @@
-# empty-project
-
-Лендинг дверь Стандарт
+# Лендинг дверь Стандарт
 
 ## Building and running on localhost
 

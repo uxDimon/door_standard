@@ -12,16 +12,63 @@ function lines_disc_img(plase) {
 		// Задаем высоту вертикальных полос так чтобы они доставали до верхнего края родительского элемента
 		let cord = i.offsetTop; // Координаты относительно родителя
 		i.querySelector(".vertical_line").style.top = "-" + cord + "px";
-		i.querySelector(".vertical_line").style.right =
-			botton_wrap_margin + botton_wrap_width + "px";
-		i.querySelector(".horizontal_line").style.left =
-			"-" + (botton_wrap_margin + 2) + "px";
+		i.querySelector(".vertical_line").style.right = botton_wrap_margin + botton_wrap_width + "px";
+		i.querySelector(".horizontal_line").style.left = "-" + (botton_wrap_margin + 2) + "px";
 	}
 }
 function lines_img(plase) {
 	for (let i of document.querySelectorAll(plase + " .shadow_botton_wrap")) {
 		let sh_botton = i.querySelector(".shadow_botton").offsetWidth;
 		i.querySelector(".horizontal_line").style.right = sh_botton + "px";
+	}
+}
+
+for (let i of document.querySelectorAll("body > div")) {
+	if (i.querySelector(".shadow_botton_wrap") != null || i.querySelector(".img_wrap > img") != null) {
+		let arr_botton = i.querySelectorAll(".shadow_botton_wrap");
+		let arr_img = i.querySelectorAll(".img_wrap > img");
+		let arr_desc = i.querySelectorAll(".description");
+
+		let add_class = "test_";
+		let add_class_botton = "test_1";
+
+		// Если есть элементы  ".shadow_botton_wrap" и  ".img_wrap > img" то выполняются события смены изображений и тултипов
+		function add_rem_class(arr, classAdd, index) {
+			for (let i of arr) {
+				i.classList.add(classAdd);
+			}
+			arr[index].classList.remove(classAdd);
+		}
+		function rem_add_class(arr, classAdd, index) {
+			for (let i of arr) {
+				i.classList.remove(classAdd);
+			}
+			arr[index].classList.add(classAdd);
+		}
+
+		function event_click_key(index) {
+			add_rem_class(arr_img, add_class, index);
+			rem_add_class(arr_botton, add_class_botton, index);
+			if (arr_desc != null && arr_desc.length != 0) {
+				add_rem_class(arr_desc, add_class, index);
+			}
+		}
+		event_click_key(0);
+
+		for (let [index, value] of arr_botton.entries()) {
+			value.addEventListener("click", function() {
+				// События при клики
+				if (value.classList.contains(add_class_botton) == false) {
+					event_click_key(index);
+				}
+			});
+			value.addEventListener("keydown", function(event) {
+				// События при нажатии Enter когда кнопка в фокусе
+				if (event.key == "Enter" || value.classList.contains(add_class_botton) == false) {
+					event_click_key(index);
+				}
+			});
+		}
 	}
 }
 
@@ -60,16 +107,13 @@ function disc_img_selection(plase, botton_id, img_id, description_id) {
 	img_id.style.opacity = "1";
 	botton_id.querySelector(".vertical_line").style.opacity = "1";
 	botton_id.querySelector(".horizontal_line").style.opacity = "1";
-	botton_id
-		.querySelector(".shadow_botton")
-		.classList.add("active_shadow_botton");
+	botton_id.querySelector(".shadow_botton").classList.add("active_shadow_botton");
 
 	if (line_height > description_id.offsetHeight) {
 		// Задает высоту линии и ширину
 		botton_id.querySelector(".vertical_line").style.height = line_height + "px";
 	} else {
-		botton_id.querySelector(".vertical_line").style.height =
-			description_id.offsetHeight + "px";
+		botton_id.querySelector(".vertical_line").style.height = description_id.offsetHeight + "px";
 	}
 	botton_id.querySelector(".horizontal_line").style.width = "420px";
 }
@@ -81,9 +125,7 @@ function img_selection(plase, botton_id, img_id) {
 
 	img_id.style.opacity = "1";
 	botton_id.querySelector(".horizontal_line").style.opacity = "1";
-	botton_id
-		.querySelector(".shadow_botton")
-		.classList.add("active_shadow_botton");
+	botton_id.querySelector(".shadow_botton").classList.add("active_shadow_botton");
 	botton_id.querySelector(".horizontal_line").style.width = "250px";
 }
 function show_description(plase, botton_id, img_id, description_id) {
@@ -153,15 +195,11 @@ function tooltip() {
 function clone_description(botton_id, description_id) {
 	// Копируем содержимое описание в тайтал
 	let description_text = description_id.innerHTML;
-	botton_id
-		.querySelector(".tooltip")
-		.insertAdjacentHTML("beforeend", description_text);
+	botton_id.querySelector(".tooltip").insertAdjacentHTML("beforeend", description_text);
 	botton_id.querySelector(".tooltip h2").remove(); // Удаляем заголовок
 }
 
-for (let i of document.querySelectorAll(
-	'input[type = "text"], input[type = "tel"]'
-)) {
+for (let i of document.querySelectorAll('input[type = "text"], input[type = "tel"]')) {
 	// Добавляет класс к 'label > span' если в input есть значение
 	i.onchange = function() {
 		if (i.value != "") {
