@@ -25,27 +25,29 @@ function lines_img(plase) {
 
 for (let i of document.querySelectorAll("body > div")) {
 	if (i.querySelector(".shadow_botton_wrap") != null || i.querySelector(".img_wrap > img") != null) {
+		// Если есть элементы  ".shadow_botton_wrap" и  ".img_wrap > img" то выполняются события смены изображений и тултипов
 		let arr_botton = i.querySelectorAll(".shadow_botton_wrap");
 		let arr_img = i.querySelectorAll(".img_wrap > img");
 		let arr_desc = i.querySelectorAll(".description");
 
-		let add_class = "test_";
-		let add_class_botton = "test_1";
+		let add_class = "hide_item";
+		let add_class_botton = "active_botton";
 
-		// Если есть элементы  ".shadow_botton_wrap" и  ".img_wrap > img" то выполняются события смены изображений и тултипов
-		function add_rem_class(arr, classAdd, index) {
-			for (let i of arr) {
-				i.classList.add(classAdd);
+		function add_rem_class(arr, classAdd, index_botton) {
+			for (let value of arr) {
+				// Добавляет классы к списку элементов
+				value.classList.add(classAdd);
 			}
-			arr[index].classList.remove(classAdd);
+			arr[index_botton].classList.remove(classAdd); // Удаляет класс у определенного индекса
 		}
 		function rem_add_class(arr, classAdd, index) {
 			for (let i of arr) {
+				// Удаляет классы у списка элементов
 				i.classList.remove(classAdd);
 			}
-			arr[index].classList.add(classAdd);
+			arr[index].classList.add(classAdd); // Добавляет класс к определенному индексу
 		}
-
+		
 		function event_click_key(index) {
 			add_rem_class(arr_img, add_class, index);
 			rem_add_class(arr_botton, add_class_botton, index);
@@ -53,7 +55,16 @@ for (let i of document.querySelectorAll("body > div")) {
 				add_rem_class(arr_desc, add_class, index);
 			}
 		}
+		
 		event_click_key(0);
+
+		if (i.querySelector(".advantage_block") != null) {
+			// Положение горизонтальной линии с лева. Если есть титул
+			let hor_line_left = i.querySelector(".botton_wrap").offsetLeft - i.querySelector(".advantage_block").offsetWidth;
+			for (let horizontal_line of i.querySelectorAll(".botton_wrap .horizontal_line")) {
+				horizontal_line.style.left = "-" + hor_line_left + "px";
+			}
+		}
 
 		for (let [index, value] of arr_botton.entries()) {
 			value.addEventListener("click", function() {
@@ -242,56 +253,56 @@ var mySwiper = new Swiper(".swiper2", {
 	}
 });
 
-clone_description(sh_botton_0_1, desc_0_1);
-clone_description(sh_botton_0_2, desc_0_2);
-clone_description(sh_botton_0_3, desc_0_3);
-clone_description(sh_botton_0_4, desc_0_4);
-clone_description(sh_botton_0_5, desc_0_5);
+// clone_description(sh_botton_0_1, desc_0_1);
+// clone_description(sh_botton_0_2, desc_0_2);
+// clone_description(sh_botton_0_3, desc_0_3);
+// clone_description(sh_botton_0_4, desc_0_4);
+// clone_description(sh_botton_0_5, desc_0_5);
 
-clone_description(sh_botton_2_1, desc_2_1);
-clone_description(sh_botton_2_2, desc_2_2);
-clone_description(sh_botton_2_3, desc_2_3);
-clone_description(sh_botton_2_4, desc_2_4);
-clone_description(sh_botton_2_5, desc_2_5);
+// clone_description(sh_botton_2_1, desc_2_1);
+// clone_description(sh_botton_2_2, desc_2_2);
+// clone_description(sh_botton_2_3, desc_2_3);
+// clone_description(sh_botton_2_4, desc_2_4);
+// clone_description(sh_botton_2_5, desc_2_5);
 
 tooltip();
 
-lines_disc_img(".door_advantages");
-lines_img(".top_lock");
-lines_disc_img(".security_points");
-lines_img(".door_armor");
+// lines_disc_img(".door_advantages");
+// lines_img(".top_lock");
+// lines_disc_img(".security_points");
+// lines_img(".door_armor");
 
-disc_img_selection(".door_advantages", sh_botton_0_1, img_dor_0_1, desc_0_1);
-img_selection(".top_lock", sh_botton_1_1, img_dor_1_1);
-disc_img_selection(".security_points", sh_botton_2_1, img_dor_2_1, desc_2_1);
-img_selection(".door_armor", sh_botton_3_1, img_dor_3_1);
+// disc_img_selection(".door_advantages", sh_botton_0_1, img_dor_0_1, desc_0_1);
+// img_selection(".top_lock", sh_botton_1_1, img_dor_1_1);
+// disc_img_selection(".security_points", sh_botton_2_1, img_dor_2_1, desc_2_1);
+// img_selection(".door_armor", sh_botton_3_1, img_dor_3_1);
 
-window.onload = function() {
-	lines_disc_img(".door_advantages");
-	lines_img(".top_lock");
-	lines_disc_img(".security_points");
-	lines_img(".door_armor");
+// window.onload = function() {
+// 	lines_disc_img(".door_advantages");
+// 	lines_img(".top_lock");
+// 	lines_disc_img(".security_points");
+// 	lines_img(".door_armor");
 
-	disc_img_selection(".door_advantages", sh_botton_0_1, img_dor_0_1, desc_0_1);
-	img_selection(".top_lock", sh_botton_1_1, img_dor_1_1);
-	disc_img_selection(".security_points", sh_botton_2_1, img_dor_2_1, desc_2_1);
-	img_selection(".door_armor", sh_botton_3_1, img_dor_3_1);
-};
+// 	disc_img_selection(".door_advantages", sh_botton_0_1, img_dor_0_1, desc_0_1);
+// 	img_selection(".top_lock", sh_botton_1_1, img_dor_1_1);
+// 	disc_img_selection(".security_points", sh_botton_2_1, img_dor_2_1, desc_2_1);
+// 	img_selection(".door_armor", sh_botton_3_1, img_dor_3_1);
+// };
 
-show_description(".door_advantages", sh_botton_0_1, img_dor_0_1, desc_0_1);
-show_description(".door_advantages", sh_botton_0_2, img_dor_0_2, desc_0_2);
-show_description(".door_advantages", sh_botton_0_3, img_dor_0_3, desc_0_3);
-show_description(".door_advantages", sh_botton_0_4, img_dor_0_4, desc_0_4);
-show_description(".door_advantages", sh_botton_0_5, img_dor_0_5, desc_0_5);
+// show_description(".door_advantages", sh_botton_0_1, img_dor_0_1, desc_0_1);
+// show_description(".door_advantages", sh_botton_0_2, img_dor_0_2, desc_0_2);
+// show_description(".door_advantages", sh_botton_0_3, img_dor_0_3, desc_0_3);
+// show_description(".door_advantages", sh_botton_0_4, img_dor_0_4, desc_0_4);
+// show_description(".door_advantages", sh_botton_0_5, img_dor_0_5, desc_0_5);
 
-show_description(".top_lock", sh_botton_1_1, img_dor_1_1);
-show_description(".top_lock", sh_botton_1_2, img_dor_1_2);
+// show_description(".top_lock", sh_botton_1_1, img_dor_1_1);
+// show_description(".top_lock", sh_botton_1_2, img_dor_1_2);
 
-show_description(".security_points", sh_botton_2_1, img_dor_2_1, desc_2_1);
-show_description(".security_points", sh_botton_2_2, img_dor_2_2, desc_2_2);
-show_description(".security_points", sh_botton_2_3, img_dor_2_3, desc_2_3);
-show_description(".security_points", sh_botton_2_4, img_dor_2_4, desc_2_4);
-show_description(".security_points", sh_botton_2_5, img_dor_2_5, desc_2_5);
+// show_description(".security_points", sh_botton_2_1, img_dor_2_1, desc_2_1);
+// show_description(".security_points", sh_botton_2_2, img_dor_2_2, desc_2_2);
+// show_description(".security_points", sh_botton_2_3, img_dor_2_3, desc_2_3);
+// show_description(".security_points", sh_botton_2_4, img_dor_2_4, desc_2_4);
+// show_description(".security_points", sh_botton_2_5, img_dor_2_5, desc_2_5);
 
-show_description(".door_armor", sh_botton_3_1, img_dor_3_1);
-show_description(".door_armor", sh_botton_3_2, img_dor_3_2);
+// show_description(".door_armor", sh_botton_3_1, img_dor_3_1);
+// show_description(".door_armor", sh_botton_3_2, img_dor_3_2);

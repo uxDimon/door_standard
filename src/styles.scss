@@ -137,10 +137,20 @@ a {
 	.horizontal_line {
 		height: 2px;
 		width: 0;
+		left: 100%;
 		top: calc((100% / 2) - 1px);
 		transition: width 170ms ease-in 170ms;
 		z-index: 0;
 	}
+
+	.growth_left {
+		right: 100%;
+		left: auto;
+	}
+}
+
+.active_botton .horizontal_line {
+	width: 500px;
 }
 
 .shadow_botton {
@@ -477,7 +487,7 @@ body {
 	background-color: $fon_color_w;
 	@include shadow_hover;
 	transition: opacity 300ms ease-out 0ms;
-
+	opacity: 1;
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -522,10 +532,11 @@ img {
 	display: none;
 }
 
-.test_ {
-	display: none;
+.hide_item {
+	opacity: 0;
 }
-.test_1 {
+
+.active_botton .shadow_botton {
 	@include shadow_active;
 }
 
