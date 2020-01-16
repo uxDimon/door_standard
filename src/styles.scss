@@ -132,6 +132,7 @@ a {
 		width: 2px;
 		height: 0;
 		transition: height 170ms ease-out 0ms;
+		visibility: hidden;
 	}
 
 	.horizontal_line {
@@ -141,6 +142,7 @@ a {
 		top: calc((100% / 2) - 1px);
 		transition: width 170ms ease-in 170ms;
 		z-index: 0;
+		visibility: hidden;
 	}
 
 	.growth_left {
@@ -151,6 +153,11 @@ a {
 
 .active_botton .horizontal_line {
 	width: 500px;
+	visibility: visible;
+}
+
+.active_botton .vertical_line {
+	visibility: visible;
 }
 
 .shadow_botton {
@@ -486,8 +493,6 @@ body {
 	padding: 20px;
 	background-color: $fon_color_w;
 	@include shadow_hover;
-	transition: opacity 300ms ease-out 0ms;
-	opacity: 1;
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -497,12 +502,16 @@ body {
 	position: relative;
 
 	img {
-		transition: opacity 300ms ease-out 0ms;
 		width: inherit;
 		position: absolute;
 		top: 0;
 		left: 0;
 	}
+}
+
+.description,
+.img_wrap img {
+	transition: opacity 300ms ease-out 0ms, visibility 300ms ease-out 0ms;
 }
 
 .accented_line {
@@ -534,6 +543,7 @@ img {
 
 .hide_item {
 	opacity: 0;
+	visibility: hidden;
 }
 
 .active_botton .shadow_botton {
@@ -1272,6 +1282,14 @@ img {
 			display: block;
 		}
 	}
+
+	.active_botton .horizontal_line {
+		width: 320px;
+	}
+
+	.shadow_botton_wrap .horizontal_line {
+		transition-delay: 50ms;
+	}
 	// // // // // // // //
 	// Остальное
 	.top_lock,
@@ -1643,6 +1661,10 @@ img {
 				margin-bottom: 0;
 			}
 		}
+	}
+
+	.active_botton .horizontal_line {
+		width: 230px;
 	}
 	// // // // // // // //
 	// // // // // // // //
