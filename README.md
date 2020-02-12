@@ -1,4 +1,4 @@
-# Лендинг дверь Стандарт
+# Лендинг дверь Стандарт [демо](https://uxdimon.github.io/door_standard)
 
 ## Building and running on localhost
 
