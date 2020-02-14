@@ -576,7 +576,7 @@ img {
 		&::after {
 			background-image: $blur_bac_1;
 			min-height: 981px;
-			left: calc(0px - (100vw - #{$column_12}) / 2);
+			left: calc((-100vw - -#{$column_12}) / 2);
 		}
 	}
 
@@ -1058,7 +1058,7 @@ img {
 
 		&::after {
 			background-image: $blur_bac_2;
-			left: calc(0px - (100vw - #{$column_4 + 60px}) / 2);
+			left: calc((-100vw - -#{$column_4 + 60px}) / 2);
 			background-position: center bottom;
 		}
 	}
@@ -1112,7 +1112,7 @@ img {
 
 		&::after {
 			background-image: $blur_bac_3;
-			left: calc(0px - (100vw - #{$column_4 + 60px}) / 2);
+			left: calc((-100vw - -#{$column_4 + 60px}) / 2);
 		}
 	}
 
@@ -1167,7 +1167,7 @@ img {
 
 		&::after {
 			background-image: $blur_bac_1;
-			right: calc(0px - (100vw - #{$column_12}) / 2);
+			right: calc((-100vw - -#{$column_12}) / 2);
 			background-position: center;
 			transform: scaleX(-1);
 		}
